@@ -20,22 +20,27 @@ cellpadding="2" cellspacing="2">
 <tr>
 <td style="vertical-align: top;">Last Name<br>
 </td>
-<td style="vertical-align: top;"><input name="firstname"> </td>
+<td style="vertical-align: top;"><input name="lastname"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Username<br>
 </td>
-<td style="vertical-align: top;"><input name="firstname"> </td>
+<td style="vertical-align: top;"><input name="username"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Password<br>
 </td>
-<td style="vertical-align: top;"><input name="firstname"> </td>
+<td style="vertical-align: top;"><input name="password"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Type<br>
 </td>
-<td style="vertical-align: top;"><input name="firstname"> </td>
+<td style="vertical-align: top;"><input name="type"> </td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Status<br>
+</td>
+<td style="vertical-align: top;"><input name="status"> </td>
 </tr>
 </tbody>
 </table>
