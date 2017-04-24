@@ -1,3 +1,5 @@
+//name input boxes the same as method params 
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <html>
@@ -7,7 +9,7 @@ http-equiv="content-type">
 <title>schoolSearchMenu</title>
 </head>
 <body>
-<form action="ui" name="schoolSearchMenu">
+<form action="SearchResults.jsp" name="schoolSearchMenu">
 <br>
 <table style="text-align: left; width: 100px;" border="1"
 cellpadding="2" cellspacing="2">
