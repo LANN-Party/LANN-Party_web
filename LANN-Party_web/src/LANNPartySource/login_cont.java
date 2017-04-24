@@ -11,9 +11,15 @@ import java.util.*;
  */
 public class login_cont {
 	DatabaseController dc;
+	StudentUserInterface SI;
+	AdminUI AI;
+	private Admin currentAdmin;
+	private Student currentStudent;
 	
 	public login_cont(){
 		dc = new DatabaseController("lannp", "lannp", "csci230");
+		SI = new StudentUserInterface();
+		AI = new AdminUI();
 	}
 	/**
 	 * Logs the user in
@@ -22,7 +28,7 @@ public class login_cont {
 	 * @param boolean steal
 	 */
 	
-	public boolean logon(String username, String password, boolean steal)
+	public int logon(String username, String password, boolean steal)
 	{
 			Student s = dc.getUser(username);
 			Admin a = dc.getAdmin(username);
@@ -30,8 +36,8 @@ public class login_cont {
 				if(password.equals(s.getPassword())){
 					if(!s.isLoggedOn()){
 						s.setLogon(true);
-						//System.out.println("Logged on");
-						return true;
+						currentStudent = s;
+						return 1;
 					}
 					else{
 						Scanner scan = new Scanner(System.in);
@@ -40,18 +46,19 @@ public class login_cont {
 						String input=scan.nextLine();
 						scan.close();
 						if (input.equals("Yes") || input.equals("yes")){
-/*Change? Redundant*/			s.setLogon(true);
-								return true;
+								s.setLogon(true);
+								currentStudent = s;
+								return 1;
 						}
 						else{
 							loginFail();
-							return false;
+							return 0;
 						}
 					}
 				}
 				else{
 					loginFail();
-					return false;
+					return 0;
 				}
 			}
 			else if(a != null){
@@ -59,7 +66,8 @@ public class login_cont {
 					if(!a.isLogon()){
 						a.setLogon(true);
 						//System.out.println("Logged on");
-						return true;
+						currentAdmin = a;
+						return 2;
 					}
 					else{
 						Scanner scan = new Scanner(System.in);
@@ -68,23 +76,24 @@ public class login_cont {
 						String input=scan.nextLine();
 						scan.close();
 						if (input.equals("Yes") || input.equals("yes")){
-	/*Change? Redundant*/			a.setLogon(true);
-									return true;
+									a.setLogon(true);
+									currentAdmin = a;
+									return 2;
 						}
 						else{
 							loginFail();
-							return false;
+							return 0;
 						}
 					}
 				}
 				else{
 					loginFail();
-					return false;
+					return 0;
 				}
 			}
 		else
 			loginFail();
-			return false;
+			return 0;
 	}
 	
 	/**
@@ -104,6 +113,14 @@ public class login_cont {
 	
 	public boolean registerAdmin(String fName, String lName, String uName, String pWord, char type, char status){
 		return dc.addUser(uName, fName, lName, pWord, type, status);
+	}
+	
+	public Admin getCurrentAdmin(){
+		return this.currentAdmin;
+	}
+	
+	public Student getCurrentStudent(){
+		return this.currentStudent;
 	}
 
 }

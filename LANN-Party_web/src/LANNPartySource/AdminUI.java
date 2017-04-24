@@ -12,6 +12,7 @@ public class AdminUI {
 	
 	private Admin_Controler AC;
 	private LogoutController lc;
+	private Admin currentAdmin;
 	
 	/**
 	 * Constructor, creates an instance of AdminUI
@@ -190,27 +191,36 @@ char type, char status){
 	public void removeEmphasis(String school, String emph){
 		AC.removeEmphasis(school, emph);
 		}
-	 /*IGNORE for phase 2
-	/**
-	 * cancle an action in progress
-	 */
-	 /*
-	public void cancel(){
 	
-		
-	}
-	*/
-	/**
-	 * lets you logout from the current screen
-	 */
-	public void logout(String uName){
-		lc.adminLogout(uName);
-		
-	}
 	
 	public void getEmphases(String school){
 		AC.getEmphases(school);
 	}
 	
-
+	/**
+	 * lets you logout from the current screen
+	 */
+	public void logout(String uName){
+		lc.adminLogout(uName);
+	}
+	
+	/**
+	 * gets the current admin
+	 * @return the currentAdmin
+	 */
+	public Admin getCurrentAdmin(){
+		return currentAdmin;
+	}
+	
+	/**
+	 * Sets the currentAdmin variable
+	 * @param currentAdmin
+	 */
+	public void setCurrentAdmin(Admin currentAdmin){
+		this.currentAdmin = currentAdmin;
+	}
+	
+	public boolean isLoggedIn(){
+		return currentAdmin.isLogon();
+	}
 }

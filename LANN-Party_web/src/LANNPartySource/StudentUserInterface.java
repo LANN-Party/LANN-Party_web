@@ -12,8 +12,8 @@ import java.util.*;
   */
 public class StudentUserInterface {
 	
-	UserController uc = new UserController();
-	Search_Controler sc = new Search_Controler();
+	private UserController uc = new UserController();
+	private Student currentStudent;
 	//Data fields
 	/**confirmation from user*/
 	boolean confirm;
@@ -123,39 +123,21 @@ public class StudentUserInterface {
 	}
 	
 	/**
-	 * gets confirmation to save selected school to the
-	 * Students saved schools
-	 * 
-	 * @return
+	 * @return the currentStudent
 	 */
-	/*IGNORE for phase 2
-	public boolean confirmSave()
-	{
-		//TODO: set the old user object and then return to previous screen
-		return false;
+	public Student getCurrentStudent(){
+		return currentStudent;
 	}
-	8?
+	
 	/**
-	 * gets cancel option so the selected school is not saved to 
-	 * 
-	 * @param none
+	 * sets the currentStudent
+	 * @param currentStudent
 	 */
-	/*IGNORE for phase 2
-	public void cancelSave()
-	{
-		//do we need this method?
+	public void setCurrentStudent(Student currentStudent){
+		this.currentStudent = currentStudent;
 	}
-	*/
-	/**
-	 * Cancel option is presented to user
-	 * 
-	 * @param none
-	 */
-	/*IGNORE for phase 2
-	public void cancel()
-	{
-	   
-	   //TODO: bring user back to screen presented before cancel was selected
+	
+	public boolean isLoggedIn(){
+		return currentStudent.isLoggedOn();
 	}
-	*/
 }

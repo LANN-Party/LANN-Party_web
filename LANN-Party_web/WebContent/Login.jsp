@@ -1,12 +1,20 @@
-<%@page language="java" import = "java.util.*"%>
+<%@page language="java" import = "java.util.*, dblibrary.project.csci230.*"%>
 <html>
 <head>
 <meta content="text/html; charset=ISO-8859-1"
 http-equiv="content-type">
-<title>login</title>
+<title>Login</title>
 </head>
 <body>
-<form action="login_action.jsp" name="login">
+Login Form: <br>
+<br>
+<%
+	String error = request.getParameter("Error");
+	if(error != null && error.equals("1")){
+		out.print("Login Failed");
+	}
+%>
+<form method ="post" action="login_action.jsp" name="login">
 <br>
 <table style="text-align: left; width: 100px;" border="1"
 cellpadding="2" cellspacing="2">
