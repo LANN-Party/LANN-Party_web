@@ -19,6 +19,6 @@ int academScale = Integer.parseInt(request.getParameter("academScale"));
 int qualOfLife = Integer.parseInt(request.getParameter("qualOfLife"));
 int socialScale = Integer.parseInt(request.getParameter("socialScale"));
 ac.addSchool(name, state, location, control, numberOfStudents, percentFemales, satVerbal, satMath, expenses, percentFinAid, applicants, percentAdmitted, percentEnrolled, academScale, socialScale, qualOfLife);
-response.sendRedirect("      .jsp");
+response.sendRedirect("AdminMenu.jsp");
 
 %>
