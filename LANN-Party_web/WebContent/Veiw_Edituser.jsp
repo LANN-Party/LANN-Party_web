@@ -1,4 +1,4 @@
-<%@ page language="java" import="LANN-Party_Project.*, java.util.*"%>
+<%@page language="java" import = "java.util.*" %>
 <html>
 <head>
 <meta content="text/html; charset=ISO-8859-1"
