@@ -15,7 +15,7 @@ http-equiv="content-type">
 <title>userMenuPage</title>
 
 </head>
-<body>
+<body style="background-color:rgb(102,102,102)">
 
 <%
 	UserController uc = new UserController();

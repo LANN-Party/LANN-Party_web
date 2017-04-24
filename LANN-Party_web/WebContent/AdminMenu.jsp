@@ -13,7 +13,7 @@ color:red;
 http-equiv="content-type">
 <title>adminMenu</title>
 </head>
-<body>
+<body style="background-color:rgb(102,102,102)">
 <h1>Admin Home Menu</h1>
 <form action="ui" name="adminMenu">
 <br>
