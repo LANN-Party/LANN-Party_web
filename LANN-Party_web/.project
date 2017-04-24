@@ -3,6 +3,8 @@
 	<name>LANN-Party_web</name>
 	<comment></comment>
 	<projects>
+		<project>LANN-Party_Project</project>
+		<project>Servers</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
