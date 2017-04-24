@@ -7,7 +7,7 @@ http-equiv="content-type">
 <title>view/editSchool</title>
 </head>
 <body>
-<form action="ui" name="viewOrEditSchool">
+<form action="viewEditSchool_action.jsp" name="viewOrEditSchool">
 <table style="text-align: left; width: 100px;" border="1"
 cellpadding="2" cellspacing="2">
 <tbody>

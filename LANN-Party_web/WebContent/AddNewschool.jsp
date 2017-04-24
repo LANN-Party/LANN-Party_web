@@ -7,7 +7,7 @@ http-equiv="content-type">
 <title>addNewSchool</title>
 </head>
 <body>
-<form action="ui" name="addNewSchool">
+<form action="AddNewSchool_action.jsp" name="addNewSchool">
 <table style="text-align: left; width: 100px;" border="1"
 cellpadding="2" cellspacing="2">
 <tbody>

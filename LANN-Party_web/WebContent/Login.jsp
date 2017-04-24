@@ -6,7 +6,7 @@ http-equiv="content-type">
 <title>login</title>
 </head>
 <body>
-<form action="ui" name="login">
+<form action="login_action.jsp" name="login">
 <br>
 <table style="text-align: left; width: 100px;" border="1"
 cellpadding="2" cellspacing="2">

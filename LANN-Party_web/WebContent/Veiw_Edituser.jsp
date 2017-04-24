@@ -6,7 +6,7 @@ http-equiv="content-type">
 <title>View/Edit user profile page</title>
 </head>
 <body>
-<form action="edituser" name="userinterface">
+<form action="viewEditUser_action.jsp" name="userinterface">
 <table style="text-align: left; width: 100px;" border="1"
 cellpadding="2" cellspacing="2">
 <tbody>
