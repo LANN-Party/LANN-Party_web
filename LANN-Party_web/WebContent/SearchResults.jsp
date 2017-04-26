@@ -12,8 +12,8 @@ http-equiv="content-type">
 <table style="text-align: left; width: 100px;" border="1"
 cellpadding="2" cellspacing="2">
 <tbody>
-<% 
-UserController uc = (UserController)session.getAttribute("UC");
+<%
+StudentUserInterface uc = (StudentUserInterface)session.getAttribute("SI");
 
 String schoolName = request.getParameter("schoolName");
 String state = request.getParameter("state");
@@ -51,16 +51,25 @@ String emph5=request.getParameter("emph5");
 ArrayList<University> results = uc.searchSchool(schoolName, state, location, control, numStuH, numStuL, percFemaleH, percFemaleL, satVerbH, satVerbL, satMathH, satMathL, expensesH, expensesL, percFinacialH, percFinacialL, numberAppsH, numberAppsL, percAdmittedH, percAdmittedL, percEnrolledH, percEnrolledL, acdemScaleH, acdemScaleL, socialscaleH, socialscaleL, qualityLifeH, qualityLifeL, emph1, emph2, emph3, emph4, emph5);
 for(University x:results){%>
 <tr>
-<td style="vertical-align: top;"><input name="save" value="Save"
+<td style="vertical-align: top;">
+					<form method="post" action="saveSchool.jsp" name="SaveSchool">
+						<input name="SaveSchool" value="SaveSchool" type="submit"> <input
+							name="SchoolName" value=<% out.print(x.getName()); %> type="hidden">
+					</form>
+				</td>
+<td style="vertical-align: top;"<%out.println(x.getName()); %>><br>
+</td>
+<td style="vertical-align: top;"><input name="view" value=<%out.println(x.getName()); %>
 type="button"><br>
 </td>
-<td style="vertical-align: top;"><br>
-</td>
-<td style="vertical-align: top;"><input name="view" value="View"
-type="button"><br>
-</td>
+<td style="vertical-align: top;">
+					<form method="post" action="viewSchool.jsp" name="ViewSchool">
+						<input name="ViewSchool" value="ViewSchool" type="submit"> <input
+							name="SchoolName" value=<% out.print(x.getName()); %> type="hidden">
+					</form>
+				</td>
 </tr>
-}%>
+<%}%>
 </tbody>
 </table>
 <br>

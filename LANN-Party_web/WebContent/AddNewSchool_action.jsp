@@ -1,6 +1,6 @@
 <%@ page language="java" import="LANNPartySource.* , java.util.*" %>
 <%
-Admin_Controler ac = (Admin_Controler)session.getAttribute("");
+AdminUI ac = (AdminUI)session.getAttribute("AI");
 
 String name = request.getParameter("schoolName");
 String state = request.getParameter("state");
