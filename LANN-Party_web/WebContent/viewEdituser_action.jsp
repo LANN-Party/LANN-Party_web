@@ -7,10 +7,10 @@
 	String lastname = request.getParameter("lastname");
 	char type = request.getParameter("type").charAt(0);
 	char status = request.getParameter("status").charAt(0);
-	UserController uc = (UserController)session.getAttribute("UC");
+	StudentUserInterface ui = (StudentUserInterface)session.getAttribute("UI");
 	
 	//EDITS INFO
-	uc.editInfo(username, firstname, lastname, password, type, status);
+	ui.editInfo(username, firstname, lastname, password, type, status);
 	
 	//SENDS REDIRECT
 	response.sendRedirect("UserMenuPage.jsp?CHANGE=1");

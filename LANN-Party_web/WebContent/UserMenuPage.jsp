@@ -18,10 +18,10 @@ http-equiv="content-type">
 <body style="background-color:rgb(102,102,102)">
 
 <%
-	UserController uc = new UserController();
-	session.setAttribute("UC",uc); 
+	StudentUserInterface ui = new StudentUserInterface();
+	session.setAttribute("UI",ui); 
 	String change = request.getParameter("CHANGE");
-	
+
 	if (change!=null && change.equals("1"))
 		out.print("Profile has been updated");
 %>
