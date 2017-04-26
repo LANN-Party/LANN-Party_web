@@ -22,17 +22,19 @@ cellpadding="2" cellspacing="2">
 <tr>
 <td style="vertical-align: top;">Username<br>
 </td>
-<td style="vertical-align: top;"><input name="firstname"></td>
+<td style="vertical-align: top;"><input name="Username"></td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Password<br>
 </td>
-<td style="vertical-align: top;"><input name="firstname"></td>
+<td style="vertical-align: top;"><input name="Password" type = "password"></td>
 </tr>
 </tbody>
 </table>
 <input name="submit" value="Submit" type="submit">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; <input name="reset" value="Reset" type="reset"><br>
+<br>
+<a href="RegisterUser.jsp" class="highlight">Register User</a> 
 </form>
 </body>
 </html>
