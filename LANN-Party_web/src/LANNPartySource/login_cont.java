@@ -37,6 +37,7 @@ public class login_cont {
 					if(!s.isLoggedOn()){
 						s.setLogon(true);
 						currentStudent = s;
+						SI.setCurrentStudent(s);
 						return 1;
 					}
 					else{
@@ -48,6 +49,7 @@ public class login_cont {
 						if (input.equals("Yes") || input.equals("yes")){
 								s.setLogon(true);
 								currentStudent = s;
+								SI.setCurrentStudent(s);
 								return 1;
 						}
 						else{
@@ -67,6 +69,7 @@ public class login_cont {
 						a.setLogon(true);
 						//System.out.println("Logged on");
 						currentAdmin = a;
+						AI.setCurrentAdmin(a);
 						return 2;
 					}
 					else{
@@ -78,6 +81,7 @@ public class login_cont {
 						if (input.equals("Yes") || input.equals("yes")){
 									a.setLogon(true);
 									currentAdmin = a;
+									AI.setCurrentAdmin(a);
 									return 2;
 						}
 						else{

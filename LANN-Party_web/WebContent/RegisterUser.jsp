@@ -1,12 +1,71 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<meta content="text/html; charset=ISO-8859-1"
+http-equiv="content-type">
+<title>Register User</title>
 </head>
 <body>
-
+<%
+	String error = request.getParameter("Error");
+	if(error != null && error.equals("0")){
+		out.print("Confirm Password must match password");
+	}
+	if(error != null && error.equals("1")){
+		out.print("Must enter a first name");
+	}
+	if(error != null && error.equals("2")){
+		out.print("Must enter a last name");
+	}
+	if(error != null && error.equals("3")){
+		out.print("Must enter a username");
+	}
+	if(error != null && error.equals("4")){
+		out.print("Must enter a password");
+	}
+	if(error != null && error.equals("5")){
+		out.print("Must confirm password");
+	}
+	if(error != null && error.equals("6")){
+		out.print("User already exists");
+	}
+%>
+<form method ="post" action="RegisterUser_action.jsp" name="registerUser">
+<br>
+<table style="text-align: left; width: 300px;" border="1"
+cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;">First Name<br>
+</td>
+<td style="vertical-align: top;"><input name="firstname"> </td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Last Name<br>
+</td>
+<td style="vertical-align: top;"><input name="lastname"> </td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Username<br>
+</td>
+<td style="vertical-align: top;"><input name="username"> </td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Password<br>
+</td>
+<td style="vertical-align: top;"><input name="password" type="password"> </td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Confirm Password<br>
+</td>
+<td style="vertical-align: top;"><input name="confirmpassword" type="password"> </td>
+</tr>
+</tbody>
+</table>
+<br>
+<input name="registerUser" value="Register User" type="submit">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; <input name="reset" value="Reset" type="reset"><br>
+</form>
 </body>
 </html>
