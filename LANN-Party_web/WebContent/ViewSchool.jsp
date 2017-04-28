@@ -7,10 +7,7 @@ http-equiv="content-type">
 <title>viewSchool</title>
 </head>
 <body>
-<form action="ui" name="viewschool"> <br>
-<table style="text-align: left; width: 100px;" border="1"
-cellpadding="2" cellspacing="2">
-<tbody>
+<br>
 <%
 	String name = request.getParameter("schoolName");
 	StudentUserInterface si = (StudentUserInterface)session.getAttribute("SI");
@@ -19,6 +16,31 @@ cellpadding="2" cellspacing="2">
 		school = si.viewRecSchools(name).get(0);
 	
  %>
+<table style="float:right" border="1">
+	<tr>
+		<th>Recommended Schools</th>
+		<th>Link</th>
+	</tr>
+		
+	<%
+		ArrayList<University> rec = si.viewRecSchools(school.getName());
+		for (int i=1; i<6; i++){
+			out.print("<tr>");
+			out.print("<td>");
+			out.print(rec.get(i).getName());
+			out.print("</td>"); %>
+			<td>
+			<form method="post" action="ViewSchool.jsp" name="view">
+			<input name="schoolName" value=<%out.print(rec.get(i).getName());%> type = "hidden">
+			<input name="view"value="View" type="submit">
+			</form>
+			</td>
+		<%}
+	%>
+</table>
+<table style="text-align: left; width: 400px;" border="1"
+cellpadding="2" cellspacing="2">
+<tbody>
 <tr>
 <td style="vertical-align: top;">School<br>
 </td>
@@ -130,6 +152,5 @@ cellpadding="2" cellspacing="2">
 </tbody>
 </table>
 <br>
-</form>
 </body>
 </html>
