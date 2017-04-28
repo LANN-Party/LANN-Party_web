@@ -90,6 +90,18 @@ import java.util.ArrayList;
 		  }
 		  
 		  /**
+		   * Displays schools saved to the specific Student user's
+		   * profile
+		   * 
+		   * @param uName : String, name of student to get saved schools for
+		   */
+		  public ArrayList<String> getSavedSchools(String uName)
+		  {
+			Student s = dc.getUser(uName);
+			return s.getSavedSchools();
+		  }
+		  
+		  /**
 		   * Gets results for name of school
 		   * 
 		   * @param sName : String, school name

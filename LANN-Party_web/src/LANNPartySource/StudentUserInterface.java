@@ -44,6 +44,16 @@ public class StudentUserInterface {
 	}
 	
 	/**
+	 * calls UserController to display the user's saved schools
+	 * 
+	 * @param uName : String, user name of student to get saved schools from
+	 */
+	public ArrayList<String> getSavedSchools(String uName)
+	{
+		return uc.getSavedSchools(uName);
+	}
+	
+	/**
 	 * allows the Student user to make changes to their profile 
 	 * information before finalizing the changes
 	 * 
