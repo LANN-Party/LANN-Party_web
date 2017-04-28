@@ -150,6 +150,10 @@ char type, char status){
 		}
 	}
 	
+	public ArrayList<University> getAllSchools(){
+		return dc.getSchools();
+	}
+	
 	/**
 	   * Adds new school to the database and using all inputs, create a new University object
 	   * 
@@ -175,7 +179,7 @@ char type, char status){
 	   * @param emphasis4 : String, the number 4 major supported at this school
 	   * @param emphasis5 : String, the number 5 major supported at this school
 	   */
-	 public boolean addSchool(String name, String state, String location, String control, int numberOfStudents, 
+	 public int addSchool(String name, String state, String location, String control, int numberOfStudents, 
 			   double percentFemales, double satVerbal, double satMath, double expenses, double percentFinAid, int applicants,
 			   double percentAdmitted, double percentEnrolled, int academScale, int socialScale, 
 			   int qualOfLife)

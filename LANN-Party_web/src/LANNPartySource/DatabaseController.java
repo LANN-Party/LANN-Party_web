@@ -352,41 +352,41 @@ if(qualOfLife<0||qualOfLife>5)
 	   * @param socialScale : int, average rating of this school socially from 1(poor)-5(excellent)
 	   * @param qualOfLife : int, average rating of this school's quality of life from 1(poor)-5(excellent)
 	   */
-	  public boolean addSchool(String name, String state, String location, String control, int numberOfStudents, 
+	  public int addSchool(String name, String state, String location, String control, int numberOfStudents, 
 	   double percentFemales, double satVerbal, double satMath, double expenses, double percentFinAid, int applicants,
 	   double percentAdmitted, double percentEnrolled, int academScale, int socialScale, 
 	   int qualOfLife)
 	  {
 		  if(numberOfStudents<0)
-				return false;
+				return 1;
 			if(percentFemales<0||percentFemales>100)
-				return false;
+				return 2;
 			if(satVerbal<0||satVerbal>800)
-				return false;
+				return 3;
 			if(satMath<0||satMath>800)
-				return false;
+				return 4;
 			if(expenses<0)
-				return false;
+				return 5;
 			if(percentFinAid<0||percentFinAid>100)
-				return false;
+				return 6;
 			if(applicants<0)
-				return false;
+				return 7;
 			if(percentAdmitted<0||percentAdmitted>100)
-				return false;
+				return 8;
 			if(percentEnrolled<0||percentEnrolled>100)
-				return false;
+				return 9;
 			if(academScale<0||academScale>5)
-				return false;
+				return 10;
 			if(socialScale<0||socialScale>5)
-				return false;
+				return 11;
 			if(qualOfLife<0||qualOfLife>5)
-				return false;
+				return 12;
 		//TODO: create University object and add it to the list of Universities in DBL
 		if(uDBL.university_addUniversity(name, state, location, control, numberOfStudents, percentFemales, satVerbal, satMath,
 				expenses, percentFinAid, applicants, percentAdmitted, percentEnrolled, academScale, socialScale, qualOfLife)>-1)
-			return true;
+			return 0;
 		else
-			return false;
+			return -1;
 		
 	  }
 	  

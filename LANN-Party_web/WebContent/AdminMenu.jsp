@@ -17,7 +17,7 @@ http-equiv="content-type">
 <h1>Admin Home Menu</h1>
 <form action="ui" name="adminMenu">
 <br>
-<a href="%22www.linkToManageUniv.com%22" class="highlight" >Manage Universities</a><br><br>
+<a href="ManageUniversities.jsp" class="highlight" >Manage Universities</a><br><br>
 <a href="%22www.linkToManageUsers.com%22" class="highlight" >Manage Users</a> <br>
 <br>
 </form>

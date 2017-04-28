@@ -89,6 +89,11 @@ char type, char status){
 		AC.displaySchools();
 	}
 	
+	public University getSchool(String sName){
+		
+		return AC.getSchool(sName);
+	}
+
 	/**
 	 * lets you veiw a selected user from screen 
 	 * 
@@ -102,6 +107,10 @@ char type, char status){
 	 */
 	public void viewSchool(String uName){
 		AC.displaySchool(uName);
+	}
+	
+	public ArrayList<University> getAllSchools(){
+		return AC.getAllSchools();
 	}
 
 	/**
@@ -154,7 +163,7 @@ char type, char status){
 	 * @param qualityOfLiffe, csale from 1-10 of how a user would rate the quality of life
 	 * @param emphases, emphases at the school
 	 */
-	 public boolean addSchool(String name, String state, String location, String control, int numberOfStudents, 
+	 public int addSchool(String name, String state, String location, String control, int numberOfStudents, 
 			   double percentFemales, double satVerbal, double satMath, double expenses, double percentFinAid, int applicants,
 			   double percentAdmitted, double percentEnrolled, int academScale, int socialScale, 
 			   int qualOfLife)
