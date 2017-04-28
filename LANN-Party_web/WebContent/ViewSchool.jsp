@@ -12,108 +12,119 @@ http-equiv="content-type">
 cellpadding="2" cellspacing="2">
 <tbody>
 <%
-University univ = (University)session.getAttribute("UNIV");
+	String name = request.getParameter("schoolName");
+	StudentUserInterface si = (StudentUserInterface)session.getAttribute("SI");
+	University school;
+	if(name != null){
+		school = si.viewRecSchools(name).get(0);
+	
  %>
 <tr>
 <td style="vertical-align: top;">School<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("schoolName"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getName());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">State<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("state"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getState());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Location<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("location"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getLocation());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Control<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("control"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getControl());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Number of students<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("numStud"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getNumOfStudents());%><br>
 </td>
 </tr>
 <tr>
-<td style="vertical-align: top;">% Female<br>
+<td style="vertical-align: top;">Percent Female<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("percFemale"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getPercentFemale());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SAT Verbal<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("satVerb"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getSATVerbal());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SAT Math<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("satMath"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getSATMath());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Expenses<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("expenses"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getExpenses());%><br>
 </td>
 </tr>
 <tr>
-<td style="vertical-align: top;">% Financial aid<br>
+<td style="vertical-align: top;">Percent Financial aid<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("percFinancial"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getPercentFinancialAid());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Number of applicants<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("numberApps"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getNumOfApplicants());%><br>
 </td>
 </tr>
 <tr>
-<td style="vertical-align: top;">% Admitted<br>
+<td style="vertical-align: top;">Percent Admitted<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("percAdmitted"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getPercentAdmitted());%><br>
 </td>
 </tr>
 <tr>
-<td style="vertical-align: top;">% Enrolled<br>
+<td style="vertical-align: top;">Percent Enrolled<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("percEnrolled"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getPercentEnrolled());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Academic scale (1-10)<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("acdemScale"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getAcademicScale());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Social scale (1-10)<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("socialscale"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getSocialScale());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Quality of life scale (1-10)<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("qualityLife"));%><br>
+<td style="vertical-align: top;"><%out.println(school.getQualityOfLife());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Emphasis<br>
 </td>
-<td style="vertical-align: top;"><%out.println(request.getParameter("emph1"));%><br><%out.println(request.getParameter("emph2"));%><br><%out.println(request.getParameter("emph3"));%><br><%out.println(request.getParameter("emph4"));%><br><%out.println(request.getParameter("emph5"));%><br>
+<td style="vertical-align: top;">
+<%	ArrayList<String> empasis = school.getEmphases();
+	for(String e:empasis){
+		out.print(e);
+		out.print("<br>");
+	}
+}%>
 </td>
 </tr>
 </tbody>

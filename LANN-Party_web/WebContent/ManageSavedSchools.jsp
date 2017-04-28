@@ -7,7 +7,7 @@ http-equiv="content-type">
 <title>manageSavedSchools</title>
 </head>
 <body>
-<form action="ui" name="manageSavedSchools"><br>
+<br>
 <table style="text-align: left; width: 200px;" border="1">
 <tbody>
 <%
@@ -19,17 +19,33 @@ http-equiv="content-type">
 	for(String school:schools){	
 %>
 <tr>
-<td style="vertical-align: top;"><input name="remove"
-value="Remove" type="button"></td>
+<td style="vertical-align: top;">
+<form method="post" action="RemoveSchool_action.jsp" name="remove">
+<input name="schoolName" value=<%out.print(school);%> type = "hidden">
+<input name="remove"value="Remove" type="submit">
+</form>
+</td>
 <td style="vertical-align: top;"><%out.print(school); %><br>
 </td>
-<td style="vertical-align: top;"><input name="view" value="View"
-type="button"></td>
+<td style="vertical-align: top;">
+<form method="post" action="ViewSchool.jsp" name="view">
+<input name="schoolName" value=<%out.print(school);%> type = "hidden">
+<input name="view"value="View" type="submit">
+</form>
+</td>
 </tr>
 <%} %>
 </tbody>
 </table>
 <br>
-</form>
+<%if(request.getParameter("ERROR")!=null){
+	if(request.getParameter("ERROR").equals("0")){
+		out.print("School has been removed!");
+	}
+	else{
+		out.print("There was an error removing that school.");
+	}
+}
+%>
 </body>
 </html>
