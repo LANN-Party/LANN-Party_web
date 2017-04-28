@@ -119,8 +119,8 @@ public class StudentUserInterface {
 	 * Displays the top 5 recommended schools based on name of school given
 	 * @param uName name of school to compare for top 5 similar schools
 	 */
-	public void viewRecSchools(String sName){
-		ArrayList<University> univ = uc.viewRecSchools(sName);
+	public ArrayList<University> viewRecSchools(String sName){
+		return uc.viewRecSchools(sName);
 		
 	}
 	
