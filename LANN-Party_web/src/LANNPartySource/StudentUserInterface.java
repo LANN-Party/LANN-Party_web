@@ -66,6 +66,11 @@ public class StudentUserInterface {
 	 */
 	public boolean editInfo(String uName, String fName, String lName, String pWord, char type, char status)
 	{
+		currentStudent.setFirstName(fName);
+		currentStudent.setLastName(lName);
+		currentStudent.setPassword(pWord);
+		currentStudent.setStatus(status);
+		currentStudent.setType(type);
 		return uc.editInfo(uName, fName, lName, pWord, type, status);
 	}
 	
