@@ -12,6 +12,7 @@ http-equiv="content-type">
 	String name = request.getParameter("schoolName");
 	StudentUserInterface si = (StudentUserInterface)session.getAttribute("SI");
 	University school;
+	System.out.println("Name given:"+name);
 	if(name != null){
 		school = si.viewRecSchools(name).get(0);
 	

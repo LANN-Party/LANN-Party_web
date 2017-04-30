@@ -187,7 +187,18 @@ if(request.getParameter("emph5")!=null || !request.getParameter("emph5").equals(
  emph5=request.getParameter("emph5");
 }
 
+System.out.println("schoolName"+schoolName);
+System.out.println("STATE:"+state);
+System.out.println("location"+location);
+System.out.println("control"+control);
+System.out.println("numStu"+ numStuH);
+System.out.println("percFemale"+percFemaleH);
+
+
 ArrayList<University> results = uc.searchSchool(schoolName, state, location, control, numStuH, numStuL, percFemaleH, percFemaleL, satVerbH, satVerbL, satMathH, satMathL, expensesH, expensesL, percFinacialH, percFinacialL, numberAppsH, numberAppsL, percAdmittedH, percAdmittedL, percEnrolledH, percEnrolledL, acdemScaleH, acdemScaleL, socialscaleH, socialscaleL, qualityLifeH, qualityLifeL, emph1, emph2, emph3, emph4, emph5);
+System.out.println("length"+results.size());
+
+
 for(University x:results){%>
 <tr>
 <td style="vertical-align: top;">
@@ -202,7 +213,7 @@ for(University x:results){%>
 <td style="vertical-align: top;">
 					<form method="post" action="ViewSchool.jsp" name="ViewSchool">
 						<input name="ViewSchool" value="ViewSchool" type="submit"> <input
-							name="SchoolName" value=<% out.print(x.getName()); %> type="hidden">
+							name="schoolName" value=<% out.print(x.getName()); %> type="hidden">
 					</form>
 				</td>
 </tr>

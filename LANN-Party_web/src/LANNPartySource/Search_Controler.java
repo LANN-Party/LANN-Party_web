@@ -44,7 +44,7 @@ public class Search_Controler {
 		boolean b = false;
 		
 		for(int i = 0; i<=49; i++){
-			if(states[i].equals(state)){
+			if(states[i].equals(state)||state==""){
 				b = true;
 				break;
 			}
@@ -54,11 +54,11 @@ public class Search_Controler {
 		if(b==false && !(state == null))
 			throw new IllegalArgumentException("Not valid state");
 		
-		if(!(location == null) && !(location.equals("URBAN") || location.equals("SUBURBAN") || location.equals("SMALL-CITY"))){
+		if(!(location == null) && !(location.equals("URBAN") || location.equals("SUBURBAN") || location.equals("SMALL-CITY")||location=="")){
 			throw new IllegalArgumentException("Not valid location");
 		}
 		
-		if(!(control == null) && !(control.equals("PRIVATE") || control.equals("PUBLIC")))
+		if(!(control == null) && !(control.equals("PRIVATE") || control.equals("PUBLIC")||control==""))
 			throw new IllegalArgumentException("Not valid control");
 		
 		if(numStuL <0)
@@ -132,15 +132,15 @@ public class Search_Controler {
 			location="";
 		if(control==null)
 			control="";
-		if(emph1!=null)
+		if(emph1!="")
 			numEmphs++;
-		if(emph2!=null)
+		if(emph2!="")
 			numEmphs++;
-		if(emph3!=null)
+		if(emph3!="")
 			numEmphs++;
-		if(emph4!=null)
+		if(emph4!="")
 			numEmphs++;
-		if(emph5!=null)
+		if(emph5!="")
 			numEmphs++;
 		if (numStuh == 0)
 			numStuh = Integer.MAX_VALUE;
@@ -191,10 +191,10 @@ public class Search_Controler {
 		
 		
 		for (University x : dc.getSchools()) {
-			if (x.getName().contains(schoolName) || schoolName.equals("")) {
-				if (x.getState().contains(state) || state.equals(""))
-					if (x.getLocation().equals(location) || location.equals(""))
-						if (x.getControl().equals(control) || control.equals(""))
+			if (x.getName().contains(schoolName) || schoolName==("")) {
+				if (x.getState().contains(state) || state==(""))
+					if (x.getLocation().equals(location) || location==(""))
+						if (x.getControl().equals(control) || control==(""))
 							if (x.getNumOfStudents() <= numStuh && x.getNumOfStudents() >= numStul)
 								if (x.getPercentFemale() <= percFemaleh && x.getPercentFemale() >= percFemalel)
 								if (x.getSATVerbal() <= satVerbh && x.getSATVerbal() >= satVerbl)
