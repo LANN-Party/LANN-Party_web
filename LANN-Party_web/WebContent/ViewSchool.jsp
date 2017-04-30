@@ -180,7 +180,7 @@ cellpadding="2" cellspacing="2">
 		<td>Go Back to User Page
 		</td>
 		<td>
-			<form method="post" action="ManageSavedSchools.jsp" name="returnMenu">
+			<form method="post" action="UserMenuPage.jsp" name="returnMenu">
 			<input name="view"value="Click Here" type="submit">
 			</form>
 		</td>
@@ -194,10 +194,10 @@ cellpadding="2" cellspacing="2">
 			</form>
 		</td>
 	</tr>
-	
-<%} %>		
-
 </table>
+<%
+	}
+	%>	
 <br>
 </body>
 </html>

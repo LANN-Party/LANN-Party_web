@@ -8,15 +8,15 @@ http-equiv="content-type">
 </head>
 <body>
 <br>
-<table style="text-align: left; width: 200px;" border="1">
-<tbody>
 <%
 	StudentUserInterface ui = (StudentUserInterface)session.getAttribute("SI");
 	Student stu = ui.getCurrentStudent();
 	String name = stu.getUserName();
 	ArrayList<String> schools = ui.getSavedSchools(name);
-	
-	for(String school:schools){	
+		if (!schools.isEmpty()){%>
+		<table style="text-align: left; width: 200px;" border="1">
+		<tbody>
+	<%	for(String school:schools){	
 %>
 <tr>
 <td style="vertical-align: top;">
@@ -38,14 +38,43 @@ http-equiv="content-type">
 </tbody>
 </table>
 <br>
-<%if(request.getParameter("ERROR")!=null){
-	if(request.getParameter("ERROR").equals("0")){
-		out.print("School has been removed!");
+<%	if(request.getParameter("ERROR")!=null){
+		if(request.getParameter("ERROR").equals("0")){
+			out.print("School has been removed!");
+		}
+		else{
+				out.print("There was an error removing that school.");
+			}
+		}
 	}
-	else{
-		out.print("There was an error removing that school.");
-	}
-}
+	else{%>
+		<p style="font-size:30px">
+			It looks like you don't have any saved schools! Try adding one first then check back here!
+		</p>
+	<%}
 %>
+<table style="float:left; width: 400px;" border="1">
+	<tr>
+		<th colspan=2>User Menu</th>
+	</tr>
+	<tr>
+		<td>Go Back to User Page
+		</td>
+		<td>
+			<form method="post" action="UserMenuPage.jsp" name="returnMenu">
+			<input name="view"value="Click Here" type="submit">
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td>Logout
+		</td>
+		<td>
+			<form method="post" action="StudentLogout_action.jsp" name="returnMenu">
+			<input name="view"value="Click Here" type="submit">
+			</form>
+		</td>
+	</tr>
+</table>
 </body>
 </html>

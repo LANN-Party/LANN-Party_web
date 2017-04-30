@@ -27,12 +27,25 @@ http-equiv="content-type">
 %>
 
 <h1>User Home Menu</h1>
-<form action="ui" name="userMenu"> <br>
-
-<a href="SchoolSearchMenu.jsp" class="highlight">Search for Schools</a> <br><br>
-<a href="ManageSavedSchools.jsp" class ="highlight">Manage My Saved Schools</a> <br><br>
-<a href="Veiw_Edituser.jsp" class ="highlight">Manage My Profile</a> <br>
 <br>
-</form>
+<table style="left; width: 400px;background-color: white;text-align: center" border="1">
+	<tr>
+		<td>
+			<a href="SchoolSearchMenu.jsp" class="highlight">Search for Schools</a> <br><br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="ManageSavedSchools.jsp" class ="highlight">Manage My Saved Schools</a> <br><br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="Veiw_Edituser.jsp" class ="highlight">Manage My Profile</a> <br><br>
+		</td>
+	</tr>
+		
+</table>
+<br>
 </body>
 </html>
