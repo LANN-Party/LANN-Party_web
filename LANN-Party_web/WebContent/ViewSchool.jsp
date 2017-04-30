@@ -16,29 +16,7 @@ http-equiv="content-type">
 		school = si.viewRecSchools(name).get(0);
 	
  %>
-<table style="float:right" border="1">
-	<tr>
-		<th>Recommended Schools</th>
-		<th>Link</th>
-	</tr>
-		
-	<%
-		ArrayList<University> rec = si.viewRecSchools(school.getName());
-		for (int i=1; i<6; i++){
-			out.print("<tr>");
-			out.print("<td>");
-			out.print(rec.get(i).getName());
-			out.print("</td>"); %>
-			<td>
-			<form method="post" action="ViewSchool.jsp" name="view">
-			<input name="schoolName" value=<%out.print(rec.get(i).getName());%> type = "hidden">
-			<input name="view"value="View" type="submit">
-			</form>
-			</td>
-		<%}
-	%>
-</table>
-<table style="text-align: left; width: 400px;" border="1"
+<table style="float:left; text-align: left; width: 400px;" border="1"
 cellpadding="2" cellspacing="2">
 <tbody>
 <tr>
@@ -146,10 +124,79 @@ cellpadding="2" cellspacing="2">
 		out.print(e);
 		out.print("<br>");
 	}
-}%>
+%>
 </td>
 </tr>
 </tbody>
+</table>
+  <table style="left; width: 400px;" border="1">
+	<tr>
+		<th>Recommended Schools</th>
+		<th>Link</th>
+	</tr>
+		
+	<%
+		ArrayList<University> rec = si.viewRecSchools(school.getName());
+		for (int i=1; i<6; i++){
+			out.print("<tr>");
+			out.print("<td>");
+			out.print(rec.get(i).getName());
+			out.print("</td>"); %>
+			<td>
+			<form method="post" action="ViewSchool.jsp" name="view">
+			<input name="schoolName" value="<%out.print(rec.get(i).getName());%>" type = "hidden">
+			<input name="view"value="View" type="submit">
+			</form>
+			</td>
+		<%}
+	%>
+</table>
+
+<table style="left; width: 400px;" border="1">
+	<tr>
+		<th colspan=2>User Menu</th>
+	</tr>
+		
+	<tr>
+		<td>Go Back to My Saved Schools
+		</td>
+		<td>
+			<form method="post" action="ManageSavedSchools.jsp" name="returnMenu">
+			<input name="view"value="Click Here" type="submit">
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td>Add This School to My Saved Schools!
+		</td>
+		<td>
+			<form method="post" action="saveSchool.jsp" name="addSchool">
+			<input name="schoolName" value="<%out.print(school.getName());%>" type = "hidden">
+			<input name="view"value="Click Here" type="submit">
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td>Go Back to User Page
+		</td>
+		<td>
+			<form method="post" action="ManageSavedSchools.jsp" name="returnMenu">
+			<input name="view"value="Click Here" type="submit">
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td>Logout
+		</td>
+		<td>
+			<form method="post" action="StudentLogout_action.jsp" name="returnMenu">
+			<input name="view"value="Click Here" type="submit">
+			</form>
+		</td>
+	</tr>
+	
+<%} %>		
+
 </table>
 <br>
 </body>
