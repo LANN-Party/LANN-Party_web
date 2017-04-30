@@ -252,9 +252,6 @@ public class Search_Controler {
 		University selected = dc.getSchool(uName);
 		if(selected == null)
 			throw new NullPointerException("School not found");
-		if(selected != null){
-			top5.add(selected);
-		}
 		// the current vector being calculated
 		Double vector = 0.0;
 		int ctr = 0;
@@ -363,7 +360,7 @@ public class Search_Controler {
 			top5.add(vectors.pollFirstEntry().getValue());
 		}
 		for(University u : top5){
-			//System.out.println(u.getName());
+			System.out.println(u.getName());
 		}
 		return top5;
 	}
