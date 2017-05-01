@@ -27,7 +27,7 @@ public class ExtraInfoExtractor {
 	 */
 	public void addViews(String schoolName){
 		try{
-			Path myPath = Paths.get("/net/home/lrdahlquist/git/LANN-Party_web/LANN-Party_web/SchoolInfo/SchoolInfo.txt");
+			Path myPath = Paths.get("/usr/people/handins/CS230/LANN-Party Phase 4/SchoolInfo.txt");
 		ArrayList<String> fileContent = new ArrayList<String>(Files.readAllLines(myPath, StandardCharsets.UTF_8));
 
 		for (int i = 0; i < fileContent.size(); i++) {
@@ -57,7 +57,7 @@ public class ExtraInfoExtractor {
 	 */
 	public void editLink(String schoolName,String newLink){
 		try{
-		Path myPath = Paths.get("/net/home/lrdahlquist/git/LANN-Party_web/LANN-Party_web/SchoolInfo/SchoolInfo.txt");
+			Path myPath = Paths.get("/usr/people/handins/CS230/LANN-Party Phase 4/SchoolInfo.txt");
 		ArrayList<String> fileContent = new ArrayList<String>(Files.readAllLines(myPath, StandardCharsets.UTF_8));
 
 		for (int i = 0; i < fileContent.size(); i++) {
@@ -84,7 +84,7 @@ public class ExtraInfoExtractor {
 	 */
 	public void addUniversity(String schoolName, String link){
 		try{
-			bw = new BufferedWriter(new FileWriter("/net/home/lrdahlquist/git/LANN-Party_web/LANN-Party_web/SchoolInfo/SchoolInfo.txt", true));
+			bw = new BufferedWriter(new FileWriter("/usr/people/handins/CS230/LANN-Party Phase 4/SchoolInfo.txt", true));
 			String line = schoolName+","+link+","+0;
 			bw.write(line);
 			bw.write(System.lineSeparator());
@@ -103,7 +103,7 @@ public class ExtraInfoExtractor {
 	 */
 	public int getNumViews(String schoolName){
 		try{
-			Path myPath = Paths.get("/net/home/lrdahlquist/git/LANN-Party_web/LANN-Party_web/SchoolInfo/SchoolInfo.txt");
+			Path myPath = Paths.get("/usr/people/handins/CS230/LANN-Party Phase 4/SchoolInfo.txt");
 			ArrayList<String> fileContent = new ArrayList<String>(Files.readAllLines(myPath, StandardCharsets.UTF_8));
 
 			for (int i = 0; i < fileContent.size(); i++) {
