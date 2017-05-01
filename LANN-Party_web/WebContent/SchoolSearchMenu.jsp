@@ -10,6 +10,33 @@ http-equiv="content-type">
 <body>
 <h1>Search Menu</h1>
 <br>
+<%
+	String error = request.getParameter("Error");
+	if(error!=null && error.equals("0"))
+		out.print("Number of Students must be greater than zero");
+	else if(error!=null && error.equals("1"))
+		out.print("Percent Female must be between 0 and 100");
+	else if(error!=null && error.equals("2"))
+		out.print("SAT Verbal must be between 0 and 800");
+	else if(error!=null && error.equals("3"))
+		out.print("SAT Math must be between 0 and 800");
+	else if(error!=null && error.equals("4"))
+		out.print("Expenses must be greather than zero");
+	else if(error!=null && error.equals("5"))
+		out.print("Percent Financial Aid must be between 0 and 100");
+	else if(error!=null && error.equals("6"))
+		out.print("Number of Applicants must be greater than zero");
+	else if(error!=null && error.equals("7"))
+		out.print("Percent Admitted must be between 0 and 100");
+	else if(error!=null && error.equals("8"))
+		out.print("Percent Enrolled must be between 0 and 100");
+	else if(error!=null && error.equals("9"))
+		out.print("Academic scale must be between 0 and 5");
+	else if(error!=null && error.equals("10"))
+		out.print("Social scale must be between 0 and 5");
+	else if(error!=null && error.equals("11"))
+		out.print("Quality of Life must be between 0 and 5");
+%>
 <form action="SearchResults.jsp" name="form1"><span
 style="font-family: &quot;Sans&quot;;"></span>
 <table style="text-align: left; width: 1299px; height: 1098px;"
