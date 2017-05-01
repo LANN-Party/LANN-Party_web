@@ -6,6 +6,7 @@
 	AdminUI ai = (AdminUI)session.getAttribute("AI");
 	Admin a = ai.getCurrentAdmin();
 	ai.logout(a.getUserName());
+	session.removeAttribute("AI");
 	response.sendRedirect("Login.jsp");
 	
 %>

@@ -5,6 +5,7 @@
 	StudentUserInterface si = (StudentUserInterface)session.getAttribute("SI");
 	Student s = si.getCurrentStudent();
 	si.Logout(s.getUserName());
+	session.removeAttribute("SI");
 	response.sendRedirect("Login.jsp");
 	
 %>
