@@ -79,9 +79,9 @@ public class StudentUserInterface {
 	 * 
 	 * @param sName : String, school name
 	 */
-	public void viewSchool(String sName)
+	public University viewSchool(String sName)
 	{
-		uc.displaySchool(sName);
+		return(uc.displaySchool(sName));
 	}
 	
 	/**

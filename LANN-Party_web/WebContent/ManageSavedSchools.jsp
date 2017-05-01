@@ -21,7 +21,7 @@ http-equiv="content-type">
 <tr>
 <td style="vertical-align: top;">
 <form method="post" action="RemoveSchool_action.jsp" name="remove">
-<input name="schoolName" value=<%out.print(school);%> type = "hidden">
+<input name="schoolName" value="<%out.print(school);%>" type = "hidden">
 <input name="remove"value="Remove" type="submit">
 </form>
 </td>
@@ -29,7 +29,7 @@ http-equiv="content-type">
 </td>
 <td style="vertical-align: top;">
 <form method="post" action="ViewSchool.jsp" name="view">
-<input name="schoolName" value=<%out.print(school);%> type = "hidden">
+<input name="schoolName" value="<%out.print(school);%>" type = "hidden">
 <input name="view"value="View" type="submit">
 </form>
 </td>

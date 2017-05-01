@@ -163,7 +163,6 @@ import java.util.ArrayList;
 		  public University displaySchool(String sName) 
 		  {
 			  University u = dc.getSchool(sName);
-			  System.out.println(u.toString());
 			  return u;
 		  }
 		  

@@ -14,7 +14,7 @@ http-equiv="content-type">
 	University school;
 	System.out.println("Name given:"+name);
 	if(name != null){
-		school = si.viewRecSchools(name).get(0);
+		school = si.viewSchool(name);
 	
  %>
 <table style="float:left; text-align: left; width: 400px;" border="1"
@@ -138,14 +138,15 @@ cellpadding="2" cellspacing="2">
 		
 	<%
 		ArrayList<University> rec = si.viewRecSchools(school.getName());
-		for (int i=1; i<6; i++){
+		for (University s:rec){
 			out.print("<tr>");
 			out.print("<td>");
-			out.print(rec.get(i).getName());
+			System.out.println(s.getName());
+			out.print(s.getName());
 			out.print("</td>"); %>
 			<td>
 			<form method="post" action="ViewSchool.jsp" name="view">
-			<input name="schoolName" value="<%out.print(rec.get(i).getName());%>" type = "hidden">
+			<input name="schoolName" value="<%out.print(s.getName());%>" type = "hidden">
 			<input name="view"value="View" type="submit">
 			</form>
 			</td>
