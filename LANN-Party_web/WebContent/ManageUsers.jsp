@@ -13,7 +13,9 @@ http-equiv="content-type">
 		out.print("Deactivation Failed");
 	String change = request.getParameter("CHANGE");
 	if(change!=null && change.equals("1"))
-		out.print("User Successfuly Edited");
+		out.print("User Successfully Edited");
+	else if(change!=null && change.equals("2"))
+		out.print("User Successfully Deleted");
 %>
 <br>
 <table style="text-align: left; width: 100px;" border="1"

@@ -11,9 +11,12 @@ http-equiv="content-type">
 	String uName = request.getParameter("Username");
 	Student s = ai.getStudent(uName);
 	Admin a = ai.getAdmin(uName);
+	String user = "a";
 %>
 <form action="ViewEditUserAdmin_action.jsp" name="viewedituseradmin">
-<%if(s!=null){%>
+<%if(s!=null){
+	user = "s";
+%>
 <table style="text-align: left; width: 100px;" border="1"
 cellpadding="2" cellspacing="2">
 <tbody>
@@ -94,6 +97,19 @@ cellpadding="2" cellspacing="2">
 <input name="Edituser" type="submit">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; <input name="Reset"
 type="reset">
+</form>
+<form method="post" action="DeleteUser.jsp" name="DeleteUser">
+<%
+String userName = "";
+if(user.equals("s")){
+	userName = s.getUserName();
+}
+else{
+	userName = a.getUserName();
+}
+	%>
+<input name="Delete" value="Delete" type="submit">
+<input name="Username" value=<%out.print(userName);%> type="hidden">
 </form>
 </body>
 </html>

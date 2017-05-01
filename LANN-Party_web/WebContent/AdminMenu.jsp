@@ -18,10 +18,10 @@ http-equiv="content-type">
 <table style="left; width: 400px;background-color: white;text-align: center" border="1">
 	<tr><td>
 <a href="ManageUniversities.jsp" class="highlight" >Manage Universities</a><br>
-</td>>
+</td>
 </tr><td>
 <a href="ManageUsers.jsp" class="highlight" >Manage Users</a> 
-</td>>
+</td>
 </tr>
 <br>
 </form>
