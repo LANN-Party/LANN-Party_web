@@ -51,6 +51,14 @@ public class Admin_Controler {
 			System.out.println(ea.toString());
 		}
 	}
+	
+	public ArrayList<Student> getStudents(){
+		return dc.getStudents();
+	}
+	
+	public ArrayList<Admin> getAdmins(){
+		return dc.getAdmins();
+	}
 	/**
 	 * When called, this method diplays the information attached to a given user
 	 * 
@@ -62,7 +70,14 @@ public class Admin_Controler {
 		}
 		System.out.println(dc.getUser(uName).toString());
 	}
-
+	
+	public Student getStudent(String uName){
+		return dc.getUser(uName);
+	}
+	
+	public Admin getAdmin(String uName){
+		return dc.getAdmin(uName);
+	}
 	
 	/**
 	 * When called, this method calls DatabaseController to create a new 
@@ -121,11 +136,13 @@ char type, char status){
 	 */
 	public boolean deactivateUser(String uName){
 		if(dc.getUser(uName) != null){
-			dc.getUser(uName).setStatus('N');
+			Student s = dc.getUser(uName);
+			dc.editUser(s.getUserName(), s.getFirstName(), s.getLastName(), s.getPassword(), s.getType(), 'N');
 			return true;
 		}
 		else if(dc.getAdmin(uName) != null){
-			dc.getAdmin(uName).setStatus('N');
+			Admin a = dc.getAdmin(uName);
+			dc.editUser(a.getUserName(), a.getFirstName(), a.getLastName(), a.getPassword(), a.getType(), 'N');
 			return true;
 		}
 		else

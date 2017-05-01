@@ -30,6 +30,13 @@ public class AdminUI {
 		AC.viewUsers();
 	}
 	
+	public ArrayList<Student> getStudents(){
+		return AC.getStudents();
+	}
+	
+	public ArrayList<Admin> getAdmins(){
+		return AC.getAdmins();
+	}
 	/**
 	 * allows admin to edit a user from their information
 	 * 
@@ -102,6 +109,15 @@ char type, char status){
 	public void veiwUser(String uName){
 		AC.displayProfile(uName);
 	}
+	
+	public Student getStudent(String uName){
+		return AC.getStudent(uName);
+	}
+	
+	public Admin getAdmin(String uName){
+		return AC.getAdmin(uName);
+	}
+	
 	/**
 	 * lets you veiw one selected school from screen
 	 */

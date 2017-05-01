@@ -14,6 +14,7 @@ public class StudentUserInterface {
 	
 	private UserController uc = new UserController();
 	private Student currentStudent;
+	LogoutController lc = new LogoutController();
 	//Data fields
 	/**confirmation from user*/
 	boolean confirm;
@@ -135,6 +136,10 @@ public class StudentUserInterface {
 	{
 		//sending University object to be sorted in the UserController
 		return uc.saveSchool(uName, sName);
+	}
+	
+	public void Logout(String uName){
+		lc.studentLogout(uName);
 	}
 	
 	/**
