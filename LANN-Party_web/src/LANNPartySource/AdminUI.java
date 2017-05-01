@@ -146,7 +146,7 @@ char type, char status){
 	 * @param qualityOfLiffe, csale from 1-10 of how a user would rate the quality of life
 	 * @param emphases, emphases at the school
 	 */   
-	public boolean editSchool(String name, String state, String location, String control, int numberOfStudents, 
+	public int editSchool(String name, String state, String location, String control, int numberOfStudents, 
 			double percentFemales, double satVerbal, double satMath, double expenses, double percentFinAid, int applicants,
 			double percentAdmitted, double percentEnrolled, int academScale, int socialScale, 
 		    int qualOfLife){

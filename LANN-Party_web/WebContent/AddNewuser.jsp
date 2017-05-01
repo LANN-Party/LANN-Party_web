@@ -10,6 +10,15 @@ http-equiv="content-type">
 <title>addNewUser</title>
 </head>
 <body>
+<%
+	String error = request.getParameter("Error");
+	if(error!=null && error.equals("1"))
+		out.print("Status must be Y or N");
+	else if(error!=null && error.equals("2"))
+		out.print("Type must be A or U");
+	else if(error!=null && error.equals("3"))
+		out.print("Must enter type and status");
+%>
 <form action="AddNewUser_action.jsp" name="addNewUser">
 <br>
 <table style="text-align: left; width: 100px;" border="1"
@@ -48,7 +57,7 @@ cellpadding="2" cellspacing="2">
 </tbody>
 </table>
 <br>
-<input name="addUser" value="Add User" type="button">&nbsp;&nbsp;&nbsp;
+<input name="addUser" value="Add User" type="submit">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; <input name="reset" value="Reset" type="reset"><br>
 </form>
 </body>

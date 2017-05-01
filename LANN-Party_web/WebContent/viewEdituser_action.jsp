@@ -10,6 +10,10 @@
 	String lastname = request.getParameter("lastname");
 	char type = request.getParameter("type").charAt(0);
 	char status = request.getParameter("status").charAt(0);
+	if(status != 'Y' && status != 'N' && status != 'y' && status != 'n'){
+		response.sendRedirect("Veiw_Edituser.jsp?Error=1");
+		return;	
+	}
 	StudentUserInterface ui = (StudentUserInterface)session.getAttribute("SI");
 	
 	//EDITS INFO

@@ -24,6 +24,11 @@ http-equiv="content-type">
 <br>
 <br>
 <br>
+<%
+	String error = request.getParameter("Error");
+	if(error!=null && error.equals("1"))
+		out.print("Status must be Y or N");
+%>
 <br>
 
 <form action="viewEdituser_action.jsp" name="viewedituser">

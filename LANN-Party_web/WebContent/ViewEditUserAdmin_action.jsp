@@ -10,6 +10,14 @@
 	String lastname = request.getParameter("lastname");
 	char type = request.getParameter("type").charAt(0);
 	char status = request.getParameter("status").charAt(0);
+	if(status != 'Y' && status != 'N' && status != 'y' && status != 'n'){
+		response.sendRedirect("ViewEditUserAdmin.jsp?Error=1&Username="+username);
+		return;	
+	}
+	else if(type != 'a' && type != 'A' && type != 'u' && type != 'U'){
+		response.sendRedirect("ViewEditUserAdmin.jsp?Error=2&Username="+username);
+		return;
+	}
 	AdminUI ai = (AdminUI)session.getAttribute("AI");
 	
 	//EDITS INFO

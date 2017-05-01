@@ -28,8 +28,10 @@ http-equiv="content-type">
 		out.print("School Removed");
 	else if(error != null && error.equals("1"))
 		out.print("Error Removing School");
+	String change = request.getParameter("CHANGE");
+	if(change != null && change.equals("0"))
+		out.print("School Edited");
 %>
-<form action="ui" name="manageUniversity">
 <br>
 <table style="text-align: left; width: 100px;" border="1"
 cellpadding="2" cellspacing="2">
@@ -133,6 +135,5 @@ cellpadding="2" cellspacing="2">
 </tbody>
 </table>
 <br>
-</form>
 </body>
 </html>

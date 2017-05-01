@@ -295,40 +295,44 @@ public class DatabaseController {
 	   * @param socialScale : int, average rating of this school socially from 1(poor)-5(excellent)
 	   * @param qualOfLife : int, average rating of this school's quality of life from 1(poor)-5(excellent)
 	   */
-	  public boolean editSchool(String name, String state, String location, String control, int numberOfStudents, 
+	  public int editSchool(String name, String state, String location, String control, int numberOfStudents, 
 		double percentFemales, double satVerbal, double satMath, double expenses, double percentFinAid, int applicants,
 		double percentAdmitted, double percentEnrolled, int academScale, int socialScale, 
 	    int qualOfLife)
 	  {               
-if(numberOfStudents<0)
-	return false;
-if(percentFemales<0||percentFemales>100)
-	return false;
-if(satVerbal<0||satVerbal>800)
-	return false;
-if(satMath<0||satMath>800)
-	return false;
-if(expenses<0)
-	return false;
-if(percentFinAid<0||percentFinAid>100)
-	return false;
-if(applicants<0)
-	return false;
-if(percentAdmitted<0||percentAdmitted>100)
-	return false;
-if(percentEnrolled<0||percentEnrolled>100)
-	return false;
-if(academScale<0||academScale>5)
-	return false;
-if(socialScale<0||socialScale>5)
-	return false;
-if(qualOfLife<0||qualOfLife>5)
-	return false;
+		  if(numberOfStudents<0)
+				return 1;
+			if(percentFemales<0||percentFemales>100)
+				return 2;
+			if(satVerbal<0||satVerbal>800)
+				return 3;
+			if(satMath<0||satMath>800)
+				return 4;
+			if(expenses<0)
+				return 5;
+			if(percentFinAid<0||percentFinAid>100)
+				return 6;
+			if(applicants<0)
+				return 7;
+			if(percentAdmitted<0||percentAdmitted>100)
+				return 8;
+			if(percentEnrolled<0||percentEnrolled>100)
+				return 9;
+			if(academScale<0||academScale>5)
+				return 10;
+			if(socialScale<0||socialScale>5)
+				return 11;
+			if(qualOfLife<0||qualOfLife>5)
+				return 12;
+			if(!location.equalsIgnoreCase("SMALL-CITY") && !location.equalsIgnoreCase("URBAN") && !location.equalsIgnoreCase("SUBURBAN") && !location.equals(""))
+				return 13;
+			if(!control.equalsIgnoreCase("PRIVATE") && !control.equalsIgnoreCase("PUBLIC") && !control.equals(""))
+				return 14;
 		if(uDBL.university_editUniversity(name, state, location, control, numberOfStudents, percentFemales, satVerbal, satMath,
 		     expenses, percentFinAid, applicants, percentAdmitted, percentEnrolled, academScale, socialScale, qualOfLife)>-1)
-			return true;
+			return 0;
 		else
-			return false;
+			return -1;
 	  }
 	  
 	  /**
@@ -381,6 +385,10 @@ if(qualOfLife<0||qualOfLife>5)
 				return 11;
 			if(qualOfLife<0||qualOfLife>5)
 				return 12;
+			if(!location.equalsIgnoreCase("SMALL-CITY") && !location.equalsIgnoreCase("URBAN") && !location.equalsIgnoreCase("SUBURBAN") && !location.equals(""))
+				return 13;
+			if(!control.equalsIgnoreCase("PRIVATE") && !control.equalsIgnoreCase("PUBLIC") && !control.equals(""))
+				return 14;
 		//TODO: create University object and add it to the list of Universities in DBL
 		if(uDBL.university_addUniversity(name, state, location, control, numberOfStudents, percentFemales, satVerbal, satMath,
 				expenses, percentFinAid, applicants, percentAdmitted, percentEnrolled, academScale, socialScale, qualOfLife)>-1)

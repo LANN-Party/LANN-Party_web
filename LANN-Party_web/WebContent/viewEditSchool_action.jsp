@@ -24,10 +24,56 @@ int qualOfLife = Integer.parseInt(request.getParameter("qualOfLife"));
 int socialScale = Integer.parseInt(request.getParameter("socialScale"));
 
 //EDITS INFO
-ai.editSchool(name, state, location, control, numberOfStudents, percentFemales, satVerbal, satMath, expenses,
-		percentFinAid, applicants, percentAdmitted, percentEnrolled, academScale, socialScale, qualOfLife);
+int error = ai.editSchool(name, state, location, control, numberOfStudents, percentFemales, satVerbal, satMath, expenses,
+			percentFinAid, applicants, percentAdmitted, percentEnrolled, academScale, socialScale, qualOfLife);
+if(error == 0){
+	response.sendRedirect("ManageUniversities.jsp?CHANGE=0");
+}
+else if(error==1){
+	response.sendRedirect("View_Editschool.jsp?Error=1&SchoolName="+name);
+}
+else if(error==2){
+	response.sendRedirect("View_Editschool.jsp?Error=2&SchoolName="+name);
+}
+else if(error==3){
+	response.sendRedirect("View_Editschool.jsp?Error=3&SchoolName="+name);
+}
+else if(error==4){
+	response.sendRedirect("View_Editschool.jsp?Error=4&SchoolName="+name);
+}
+else if(error==5){
+	response.sendRedirect("View_Editschool.jsp?Error=5&SchoolName="+name);
+}
+else if(error==6){
+	response.sendRedirect("View_Editschool.jsp?Error=6&SchoolName="+name);
+}
+else if(error==7){
+	response.sendRedirect("View_Editschool.jsp?Error=7&SchoolName="+name);
+}
+else if(error==8){
+	response.sendRedirect("View_Editschool.jsp?Error=8&SchoolName="+name);
+}
+else if(error==9){
+	response.sendRedirect("View_Editschool.jsp?Error=9&SchoolName="+name);
+}
+else if(error==10){
+	response.sendRedirect("View_Editschool.jsp?Error=10&SchoolName="+name);
+}
+else if(error==11){
+	response.sendRedirect("View_Editschool.jsp?Error=11&SchoolName="+name);
+}
+else if(error==12){
+	response.sendRedirect("View_Editschool.jsp?Error=12&SchoolName="+name);
+}
+else if(error==-1){
+	response.sendRedirect("View_Editschool.jsp?Error=-1&SchoolName="+name);
+}
+else if(error==13){
+	response.sendRedirect("View_Editschool.jsp?Error=13&SchoolName="+name);
+}
+else if(error==14){
+	response.sendRedirect("View_Editschool.jsp?Error=14&SchoolName="+name);
+}
 
-//SENDS REDIRECT
-response.sendRedirect("ManageUniversities.jsp?Change=0");
 
 %>

@@ -22,6 +22,14 @@ http-equiv="content-type">
 <br>
 <br>
 <body>
+
+<%
+String error = request.getParameter("Error");
+if(error!=null && error.equals("1"))
+	out.print("Status must be Y or N");
+else if(error!=null && error.equals("2"))
+	out.print("Type must be A or U");
+%>
 <%
 	String uName = request.getParameter("Username");
 	Student s = ai.getStudent(uName);

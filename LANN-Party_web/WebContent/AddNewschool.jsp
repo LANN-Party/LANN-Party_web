@@ -63,6 +63,12 @@ http-equiv="content-type">
 	else if(error != null && error.equals("-1")){
 		out.print("Add Failed, Database Error");
 	}
+	else if(error != null && error.equals("13")){
+		out.print("Add Failed, Invalid Location");
+	}
+	else if(error != null && error.equals("14")){
+		out.print("Add Failed, Invalid Control");
+	}
 %>
 <form action="AddNewSchool_action.jsp" name="addNewSchool">
 <table style="text-align: left; width: 100px;" border="1"

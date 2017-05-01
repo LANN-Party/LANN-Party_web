@@ -21,6 +21,54 @@ http-equiv="content-type">
 <br>
 <body>
 <%
+String error = request.getParameter("Error");
+if(error != null && error.equals("1")){
+	out.print("Edit Failed, Invalid Number of Students");
+}
+else if(error != null && error.equals("2")){
+	out.print("Edit Failed, Invalid Percent Females");
+}
+else if(error != null && error.equals("3")){
+	out.print("Edit Failed, Invalid SAT Verbal");
+}
+else if(error != null && error.equals("4")){
+	out.print("Edit Failed, Invalid SAT Math");
+}
+else if(error != null && error.equals("5")){
+	out.print("Edit Failed, Invalid Expenses");
+}
+else if(error != null && error.equals("6")){
+	out.print("Edit Failed, Invalid Percent Financial Aid");
+}
+else if(error != null && error.equals("7")){
+	out.print("Edit Failed, Invalid Number of Applicants");
+}
+else if(error != null && error.equals("8")){
+	out.print("Edit Failed, Invalid Percent Admitted");
+}
+else if(error != null && error.equals("9")){
+	out.print("Edit Failed, Invalid Percent Enrolled");
+}
+else if(error != null && error.equals("10")){
+	out.print("Edit Failed, Invalid Academic Scale");
+}
+else if(error != null && error.equals("11")){
+	out.print("Edit Failed, Invalid Social Scale");
+}
+else if(error != null && error.equals("12")){
+	out.print("Edit Failed, Invalid Quality of Life");
+}
+else if(error != null && error.equals("-1")){
+	out.print("Edit Failed, Database Error");
+}
+else if(error != null && error.equals("13")){
+	out.print("Edit Failed, Invalid Location");
+}
+else if(error != null && error.equals("14")){
+	out.print("Edit Failed, Invalid Control");
+}
+%>
+<%
 	String schoolName = request.getParameter("SchoolName");
 	AdminUI ai = (AdminUI)session.getAttribute("AI");
 	University u = ai.getSchool(schoolName);

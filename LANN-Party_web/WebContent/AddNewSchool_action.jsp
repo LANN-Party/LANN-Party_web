@@ -65,5 +65,11 @@ else if(error==12){
 else if(error==-1){
 	response.sendRedirect("AddNewschool.jsp?Error=-1");
 }
+else if(error==13){
+	response.sendRedirect("AddNewschool.jsp?Error=13");
+}
+else if(error==14){
+	response.sendRedirect("AddNewschool.jsp?Error=14");
+}
 
 %>

@@ -30,11 +30,18 @@ http-equiv="content-type">
 		out.print("User Successfully Edited");
 	else if(change!=null && change.equals("2"))
 		out.print("User Successfully Deleted");
+	else if(change!=null && change.equals("3"))
+		out.print("User Successfully Added");
 %>
 <br>
 <table style="text-align: left; width: 100px;" border="1"
 cellpadding="2" cellspacing="2">
 <tbody>
+<tr align="center">
+<td colspan="8" rowspan"1" style="vertical-align: top;">
+<a href="AddNewuser.jsp">ADD NEW USER</a>
+</td>
+</tr>
 <tr>
 <td style="vertical-align: top;"><br>
 </td>
