@@ -37,7 +37,7 @@ http-equiv="content-type">
 </tr>
 <br>
 </form>
-<form method="post" action="StudentLogout_action.jsp" name="returnMenu">
+<form method="post" action="AdminLogout_action.jsp" name="returnMenu">
 			<input name="view"value="Logout" type="submit">
 			</form>
 </body>

@@ -21,6 +21,9 @@ http-equiv="content-type">
 <br>
 <br>
 <br>
+<form method="post" action="AdminMenu.jsp" name="returnMenu">
+			<input name="view"value="Menu" type="submit">
+			</form>
 <%
 	String error = request.getParameter("Error");
 	if(error!=null && error.equals("1"))
