@@ -7,7 +7,7 @@ http-equiv="content-type">
 </head>
 <style>
 	body {
-        background-image: url("http://i.imgur.com/rZwQFmy.jpg");
+        background-image: url("http://i.imgur.com/rZwQFmY.jpg");
         backgroup-size:100%,100%;
 }
 </style>
