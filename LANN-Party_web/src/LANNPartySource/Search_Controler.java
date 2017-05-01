@@ -44,21 +44,21 @@ public class Search_Controler {
 		boolean b = false;
 		
 		for(int i = 0; i<=49; i++){
-			if(states[i].equalsIgnoreCase(state)||state==""){
+			if(state == null || states[i].equalsIgnoreCase(state)||state.equals("")){
 				b = true;
 				break;
 			}
 			else
 				b = false;
 		}
-		if(b==false && !(state == null))
+		if(b==false && !(state==null))
 			throw new IllegalArgumentException("Not valid state");
 		
-		if(!(location == null) && !(location.equalsIgnoreCase("URBAN") || location.equalsIgnoreCase("SUBURBAN") || location.equalsIgnoreCase("SMALL-CITY")||location=="")){
+		if(!(location==null) && (!(location.equalsIgnoreCase("URBAN") || location.equalsIgnoreCase("SUBURBAN") || location.equalsIgnoreCase("SMALL-CITY")||location.equals("")))){
 			throw new IllegalArgumentException("Not valid location");
 		}
 		
-		if(!(control == null) && !(control.equalsIgnoreCase("PRIVATE") || control.equalsIgnoreCase("PUBLIC")||control==""))
+		if(!(control==null) && (!(control.equalsIgnoreCase("PRIVATE") || control.equalsIgnoreCase("PUBLIC")||control.equals(""))))
 			throw new IllegalArgumentException("Not valid control");
 		
 		if(numStuL <0)
@@ -191,14 +191,15 @@ public class Search_Controler {
 		
 		
 		for (University x : dc.getSchools()) {
+			String name = x.getName();
 			if (x.getName().toLowerCase().contains((schoolName).toLowerCase()) || schoolName==("")) {
 				if (x.getState().toLowerCase().contains((state).toLowerCase()) || state==(""))
 					if (x.getLocation().equalsIgnoreCase(location) || location==(""))
 						if (x.getControl().equalsIgnoreCase(control) || control==(""))
 							if (x.getNumOfStudents() <= numStuh && x.getNumOfStudents() >= numStul)
 								if (x.getPercentFemale() <= percFemaleh && x.getPercentFemale() >= percFemalel)
-								if (x.getSATVerbal() <= satVerbh && x.getSATVerbal() >= satVerbl)
-									if (x.getSATMath() <= satMathh && x.getSATMath() >= satMathl)
+								if ((x.getSATVerbal() <= satVerbh && x.getSATVerbal() >= satVerbl) || x.getSATVerbal() == -1)
+									if ((x.getSATMath() <= satMathh && x.getSATMath() >= satMathl) || x.getSATMath() == -1)
 										if (x.getExpenses() <= expensesh && x.getExpenses() >= expensesl)
 											if (x.getPercentFinancialAid() <= percFinacialh
 											&& x.getPercentFinancialAid() >= percFinaciall)
@@ -219,7 +220,7 @@ public class Search_Controler {
 																			for (String s : dc.getEmphases(x.getName())) {
 																				if (s.equalsIgnoreCase(emph1) || s.equalsIgnoreCase(emph2)
 																						|| s.equalsIgnoreCase(emph3) || s.equalsIgnoreCase(emph4)
-																						|| s.equalsIgnoreCase(emph5))
+																						|| s.equalsIgnoreCase(emph5) || s.equals("") || s==null || s.equals("[]"))
 																					c--;
 																			}
 																		}

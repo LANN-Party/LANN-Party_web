@@ -72,11 +72,11 @@ cellpadding="2" cellspacing="2">
 </td>
 <td style="vertical-align: top;">% Enrolled<br>
 </td>
-<td style="vertical-align: top;">Academic Scale (1-10)<br>
+<td style="vertical-align: top;">Academic Scale (1-5)<br>
 </td>
-<td style="vertical-align: top;">Social Scale (1-10)<br>
+<td style="vertical-align: top;">Social Scale (1-5)<br>
 </td>
-<td style="vertical-align: top;">Quality of Life (1-10)<br>
+<td style="vertical-align: top;">Quality of Life (1-5)<br>
 </td>
 <td style="vertical-align: top;">Edit<br>
 </td>

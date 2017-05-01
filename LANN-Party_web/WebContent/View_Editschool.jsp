@@ -177,7 +177,7 @@ cellpadding="2" cellspacing="2">
 <tr>
 <td style="vertical-align: top;">Emphases<br>
 </td>
-<td style="vertical-align: top;"><input name="emphasis" value=<%out.print(u.getEmphases());%>>
+<td style="vertical-align: top;"><input name="emphasis" value="<%out.print(u.getEmphases());%>">
 </td>
 </tr>
 <tr>
