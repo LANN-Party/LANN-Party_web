@@ -5,6 +5,8 @@
 	String password = request.getParameter("Password");
 	login_cont loginCont = new login_cont();
 	int logStatus = loginCont.logon(username, password, true);
+	ExtraInfoExtractor eie = new ExtraInfoExtractor();
+	session.setAttribute("EIE",eie);
 	
 	if(logStatus == 1){
 		StudentUserInterface SI = new StudentUserInterface();

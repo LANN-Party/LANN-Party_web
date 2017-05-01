@@ -24,16 +24,19 @@ http-equiv="content-type">
 <%
 	String name = request.getParameter("schoolName");
 	StudentUserInterface si = (StudentUserInterface)session.getAttribute("SI");
+	ExtraInfoExtractor eie = (ExtraInfoExtractor)session.getAttribute("EIE");
 	University school;
 	if(name != null){
 		school = si.viewSchool(name);
+		eie.addViews(school.getName());
 	
  %>
 <table style="float:left; text-align: left; width: 400px;" border="1"
 cellpadding="2" cellspacing="2">
 <tbody>
 <tr>
-		<th colspan=2 style="text-align: center;">School Info</th>
+		<th style="text-align: center;">School Info</th>
+		<th style="text-align: center;">View Count: <%out.print(eie.getNumViews(school.getName())); %></th>
 <tr>
 <td style="vertical-align: top;">School<br>
 </td>
