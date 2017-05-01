@@ -20,10 +20,11 @@ http-equiv="content-type">
 <br>
 <br>
 <br>
+<h1>Manage Saved Schools</h1>
 <br>
-<br>
-<br>
-<br>
+<form method="post" action="UserMenuPage.jsp" name="returnMenu">
+			<input name="view"value="Menu" type="submit">
+			</form>
 
 <%
 	StudentUserInterface ui = (StudentUserInterface)session.getAttribute("SI");
@@ -70,28 +71,5 @@ http-equiv="content-type">
 		</p>
 	<%}
 %>
-<table style="float:left; width: 400px;" border="1">
-	<tr>
-		<th colspan=2>User Menu</th>
-	</tr>
-	<tr>
-		<td>Go Back to User Page
-		</td>
-		<td>
-			<form method="post" action="UserMenuPage.jsp" name="returnMenu">
-			<input name="view"value="Click Here" type="submit">
-			</form>
-		</td>
-	</tr>
-	<tr>
-		<td>Logout
-		</td>
-		<td>
-			<form method="post" action="StudentLogout_action.jsp" name="returnMenu">
-			<input name="view"value="Click Here" type="submit">
-			</form>
-		</td>
-	</tr>
-</table>
 </body>
 </html>

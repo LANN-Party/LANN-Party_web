@@ -20,16 +20,16 @@ http-equiv="content-type">
 <br>
 <br>
 <br>
+<h1>Manage Profile</h1>
 <br>
-<br>
-<br>
-<br>
+<form method="post" action="UserMenuPage.jsp" name="returnMenu">
+			<input name="view"value="Menu" type="submit">
+			</form>
 <%
 	String error = request.getParameter("Error");
 	if(error!=null && error.equals("1"))
 		out.print("Status must be Y or N");
 %>
-<br>
 
 <form action="viewEdituser_action.jsp" name="viewedituser">
 <table style="text-align: left; width: 100px;" border="1"
