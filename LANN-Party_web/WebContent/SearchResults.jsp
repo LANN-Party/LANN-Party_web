@@ -15,8 +15,7 @@ cellpadding="2" cellspacing="2">
 <tr>Schools</tr>
 
 <%
-//StudentUserInterface uc = (StudentUserInterface)session.getAttribute("SI");
-StudentUserInterface uc = new StudentUserInterface();
+StudentUserInterface uc = (StudentUserInterface)session.getAttribute("SI");
 
 String schoolName =null;
 if(request.getParameter("schoolname")!=null || !request.getParameter("schoolname").equals("")){
@@ -199,21 +198,23 @@ ArrayList<University> results = uc.searchSchool(schoolName, state, location, con
 System.out.println("length"+results.size());
 
 
-for(University x:results){%>
+for(University x:results){
+String name = x.getName();
+%>
 <tr>
 <td style="vertical-align: top;">
-					<form method="post" action="saveSchool.jsp" name="SaveSchool">
-						<input name="SaveSchool" value="SaveSchool" type="submit"> <input
-							name="SchoolName" value=<% out.print(x.getName()); %> type="hidden">
+					<form method="post" action="saveSchool.jsp" name="saveSchool">
+						<input name="saveSchool" value="SaveSchool" type="submit"> <input
+							name="schoolName" value=<% out.print(name); %> type="hidden">
 					</form>
-					<td> <%out.println(x.getName()+"                                         ");%></td>
+					<td> <%out.println(name+"                                  ");%></td>
 				</td>
 
 </td>
 <td style="vertical-align: top;">
 					<form method="post" action="ViewSchool.jsp" name="ViewSchool">
 						<input name="ViewSchool" value="ViewSchool" type="submit"> <input
-							name="schoolName" value=<% out.print(x.getName()); %> type="hidden">
+							name="schoolName" value=<% out.println(name); %> type="hidden">
 					</form>
 				</td>
 </tr>
