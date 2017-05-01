@@ -20,6 +20,8 @@ http-equiv="content-type">
 cellpadding="2" cellspacing="2">
 <tbody>
 <tr>
+		<th colspan=2 style="text-align: center;">School Info</th>
+<tr>
 <td style="vertical-align: top;">School<br>
 </td>
 <td style="vertical-align: top;"><%out.println(school.getName());%><br>
@@ -131,8 +133,7 @@ cellpadding="2" cellspacing="2">
 </table>
   <table style="left; width: 400px;" border="1">
 	<tr>
-		<th>Recommended Schools</th>
-		<th>Link</th>
+		<th colspan=2 style="text-align: center;">Recommended Schools</th>
 	</tr>
 		
 	<%
@@ -140,10 +141,9 @@ cellpadding="2" cellspacing="2">
 		for (University s:rec){
 			out.print("<tr>");
 			out.print("<td>");
-			System.out.println(s.getName());
 			out.print(s.getName());
 			out.print("</td>"); %>
-			<td>
+			<td style="text-align: left;">
 			<form method="post" action="ViewSchool.jsp" name="view">
 			<input name="schoolName" value="<%out.print(s.getName());%>" type = "hidden">
 			<input name="view"value="View" type="submit">

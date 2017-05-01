@@ -3,7 +3,6 @@
 <% 
 StudentUserInterface si = (StudentUserInterface)session.getAttribute("SI");
 String sName = request.getParameter("schoolName");
-System.out.println("name that was gven:"+sName);
 si.saveSchool(si.getCurrentStudent().getUserName(), sName);
 response.sendRedirect("UserMenuPage.jsp");
 %>

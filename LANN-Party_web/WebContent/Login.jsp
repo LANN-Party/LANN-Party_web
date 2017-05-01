@@ -5,6 +5,12 @@
 http-equiv="content-type">
 <title>Login</title>
 </head>
+<style>
+	body {
+        background-image: url("http://i.imgur.com/rZwQFmy.jpg");
+        backgroup-size:100%,100%;
+}
+</style>
 <body>
 Login Form: <br>
 <br>
