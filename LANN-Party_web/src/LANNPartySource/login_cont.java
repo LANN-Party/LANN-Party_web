@@ -41,8 +41,6 @@ public class login_cont {
 					}
 					else{
 						Scanner scan = new Scanner(System.in);
-						System.out.println("You are already logged in, would you like to steal the session");
-						System.out.println("Enter Yes / No");
 						String input=scan.nextLine();
 						scan.close();
 						if (input.equals("Yes") || input.equals("yes")){
@@ -71,8 +69,6 @@ public class login_cont {
 					}
 					else{
 						Scanner scan = new Scanner(System.in);
-						System.out.println("You are already logged in, would you like to steal the session");
-						System.out.println("Enter Yes / No");
 						String input=scan.nextLine();
 						scan.close();
 						if (input.equals("Yes") || input.equals("yes")){
@@ -103,7 +99,6 @@ public class login_cont {
 	
 	public void loginFail()
 	{
-		System.out.println("Login failed, please try again");
 	}
 	
 	public boolean registerStudent(String fName, String lName, String uName, String pWord, char type, char status){
