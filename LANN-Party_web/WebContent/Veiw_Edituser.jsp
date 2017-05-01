@@ -1,5 +1,7 @@
 <%@page language="java" import = "LANNPartySource.* , java.util.*, dblibrary.project.csci230.*" %>
 <%StudentUserInterface ui = (StudentUserInterface)session.getAttribute("SI"); %>
+<%@include file = "verifyLogin.jsp" %>
+
 <html>
 <head>
 <meta content="text/html; charset=ISO-8859-1"

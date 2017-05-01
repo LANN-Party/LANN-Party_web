@@ -1,4 +1,6 @@
 <%@ page language="java" import="LANNPartySource.* , java.util.*, dblibrary.project.csci230.*"%>
+<%@include file = "verifyLogin.jsp" %>
+
 <%
 	//GETTING ALL VARIABLES FROM PAGE
 	String username = request.getParameter("username");

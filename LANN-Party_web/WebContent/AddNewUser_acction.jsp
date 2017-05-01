@@ -1,4 +1,6 @@
 <%@ page language="java" import="LANNPartySource.* , java.util.*" %>
+<%@include file = "verifyLogin.jsp" %>
+
 <%
 AdminUI ac = (AdminUI)session.getAttribute("AI");
 String fName = request.getParameter("firstname");

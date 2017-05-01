@@ -1,4 +1,5 @@
 <%@ page language="java" import="LANNPartySource.* , java.util.*, dblibrary.project.csci230.*"%>
+
 <% 
 	String firstName = request.getParameter("firstname");
 	String lastName = request.getParameter("lastname");

@@ -1,4 +1,6 @@
 <%@ page language="java" import="LANNPartySource.* , java.util.*, dblibrary.project.csci230.*"%>
+<%@include file = "verifyLogin.jsp" %>
+
 <%
 	String schoolToRemove = request.getParameter("schoolName");
 	StudentUserInterface studentUI = (StudentUserInterface)session.getAttribute("SI");

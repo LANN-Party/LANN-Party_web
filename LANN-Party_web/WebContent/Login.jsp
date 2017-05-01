@@ -19,6 +19,9 @@ Login Form: <br>
 	if(error != null && error.equals("1")){
 		out.print("Login Failed");
 	}
+	if(error != null && error.equals("2")){
+		out.print("Must be logged on");
+	}
 %>
 <form method ="post" action="login_action.jsp" name="login">
 <br>
