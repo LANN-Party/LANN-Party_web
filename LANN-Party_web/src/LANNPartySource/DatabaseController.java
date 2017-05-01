@@ -389,6 +389,8 @@ public class DatabaseController {
 				return 13;
 			if(!control.equalsIgnoreCase("PRIVATE") && !control.equalsIgnoreCase("PUBLIC") && !control.equals(""))
 				return 14;
+			if(name.equals(null) || name.equals(""))
+				return 15;
 		//TODO: create University object and add it to the list of Universities in DBL
 		if(uDBL.university_addUniversity(name, state, location, control, numberOfStudents, percentFemales, satVerbal, satMath,
 				expenses, percentFinAid, applicants, percentAdmitted, percentEnrolled, academScale, socialScale, qualOfLife)>-1)

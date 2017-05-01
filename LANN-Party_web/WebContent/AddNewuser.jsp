@@ -5,11 +5,22 @@
     
 <html>
 <head>
+<style>
+body {
+        background-image: url("http://i.imgur.com/jNM42jj.jpg");
+        backgroup-size:100%,100%;
+        background-repeat:no-repeat;
+}
+</style>
 <meta content="text/html; charset=ISO-8859-1"
 http-equiv="content-type">
 <title>addNewUser</title>
 </head>
 <body>
+<br>
+<br>
+<h1>Add New User</h1>
+<br>
 <%
 	String error = request.getParameter("Error");
 	if(error!=null && error.equals("1"))
@@ -59,6 +70,9 @@ cellpadding="2" cellspacing="2">
 <br>
 <input name="addUser" value="Add User" type="submit">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; <input name="reset" value="Reset" type="reset"><br>
+</form>
+<form action="ManageUniversities.jsp" name="ManageUniversities">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="cancelChanges" value="Cancel" type="submit">
 </form>
 </body>
 </html>

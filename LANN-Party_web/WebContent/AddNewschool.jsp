@@ -18,8 +18,7 @@ http-equiv="content-type">
 </head>
 <br>
 <br>
-<br>
-<br>
+<h1>Add School</h1>
 <br>
 <body>
 <%
@@ -69,8 +68,11 @@ http-equiv="content-type">
 	else if(error != null && error.equals("14")){
 		out.print("Add Failed, Invalid Control");
 	}
+	else if(error !=null && error.equals("15")){
+		out.print("Add Failed, Invalid Name");
+	}
 %>
-<form action="AddNewSchool_action.jsp" name="addNewSchool">
+<form action="AddNewSchool_action.jsp" name="AddNewSchool">
 <table style="text-align: left; width: 100px;" border="1"
 cellpadding="2" cellspacing="2">
 <tbody>
@@ -180,8 +182,10 @@ cellpadding="2" cellspacing="2">
 </table>
 <br>
 <input name="addSchool" value="Add School" type="submit">
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input name="cancelChanges"
-value="Cancel Changes" type="reset"><br>
+<input name="reset" value="Reset" type="reset">
+</form>
+<form action="ManageUniversities.jsp" name="ManageUniversities">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="cancelChanges" value="Cancel" type="submit">
 </form>
 <br>
 <br>

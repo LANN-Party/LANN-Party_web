@@ -18,8 +18,7 @@ http-equiv="content-type">
 <body>
 <br>
 <br>
-<br>
-<br>
+<h1>Manage Users</h1>
 <br>
 <form method="post" action="AdminMenu.jsp" name="returnMenu">
 			<input name="view"value="Menu" type="submit">
@@ -36,7 +35,6 @@ http-equiv="content-type">
 	else if(change!=null && change.equals("3"))
 		out.print("User Successfully Added");
 %>
-<br>
 <table style="text-align: left; width: 100px;" border="1"
 cellpadding="2" cellspacing="2">
 <tbody>
