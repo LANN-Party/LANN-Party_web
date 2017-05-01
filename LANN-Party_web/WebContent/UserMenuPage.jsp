@@ -62,6 +62,8 @@ http-equiv="content-type">
 		
 </table>
 <br>
-<input name="logout" value="Logout" type="submit">
+<form method="post" action="StudentLogout_action.jsp" name="returnMenu">
+			<input name="view"value="Logout" type="submit">
+			</form>
 </body>
 </html>
