@@ -21,7 +21,6 @@ public class LogoutController {
 			return false;
 		s.setLogon(false);
 		if(!s.isLoggedOn()){
-			System.out.println("Logged Off");
 			return true;
 		}
 		return false;
@@ -37,7 +36,6 @@ public class LogoutController {
 			return false;
 		a.setLogon(false);;
 		if(!a.isLogon()){
-			System.out.println("Logged Off");
 			return true;
 		}
 		return false;

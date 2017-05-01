@@ -44,7 +44,7 @@ public class Search_Controler {
 		boolean b = false;
 		
 		for(int i = 0; i<=49; i++){
-			if(states[i].equals(state)||state==""){
+			if(states[i].equalsIgnoreCase(state)||state==""){
 				b = true;
 				break;
 			}
@@ -54,11 +54,11 @@ public class Search_Controler {
 		if(b==false && !(state == null))
 			throw new IllegalArgumentException("Not valid state");
 		
-		if(!(location == null) && !(location.equals("URBAN") || location.equals("SUBURBAN") || location.equals("SMALL-CITY")||location=="")){
+		if(!(location == null) && !(location.equalsIgnoreCase("URBAN") || location.equalsIgnoreCase("SUBURBAN") || location.equalsIgnoreCase("SMALL-CITY")||location=="")){
 			throw new IllegalArgumentException("Not valid location");
 		}
 		
-		if(!(control == null) && !(control.equals("PRIVATE") || control.equals("PUBLIC")||control==""))
+		if(!(control == null) && !(control.equalsIgnoreCase("PRIVATE") || control.equalsIgnoreCase("PUBLIC")||control==""))
 			throw new IllegalArgumentException("Not valid control");
 		
 		if(numStuL <0)
@@ -191,10 +191,10 @@ public class Search_Controler {
 		
 		
 		for (University x : dc.getSchools()) {
-			if (x.getName().contains(schoolName) || schoolName==("")) {
-				if (x.getState().contains(state) || state==(""))
-					if (x.getLocation().equals(location) || location==(""))
-						if (x.getControl().equals(control) || control==(""))
+			if (x.getName().toLowerCase().contains((schoolName).toLowerCase()) || schoolName==("")) {
+				if (x.getState().toLowerCase().contains((state).toLowerCase()) || state==(""))
+					if (x.getLocation().equalsIgnoreCase(location) || location==(""))
+						if (x.getControl().equalsIgnoreCase(control) || control==(""))
 							if (x.getNumOfStudents() <= numStuh && x.getNumOfStudents() >= numStul)
 								if (x.getPercentFemale() <= percFemaleh && x.getPercentFemale() >= percFemalel)
 								if (x.getSATVerbal() <= satVerbh && x.getSATVerbal() >= satVerbl)
@@ -217,9 +217,9 @@ public class Search_Controler {
 																		int c =numEmphs;
 																		if(dc.getEmphases(x.getName()) !=null){
 																			for (String s : dc.getEmphases(x.getName())) {
-																				if (s.equals(emph1) || s.equals(emph2)
-																						|| s.equals(emph3) || s.equals(emph4)
-																						|| s.equals(emph5))
+																				if (s.equalsIgnoreCase(emph1) || s.equalsIgnoreCase(emph2)
+																						|| s.equalsIgnoreCase(emph3) || s.equalsIgnoreCase(emph4)
+																						|| s.equalsIgnoreCase(emph5))
 																					c--;
 																			}
 																		}
@@ -331,23 +331,23 @@ public class Search_Controler {
 			vector += Math.abs((selected.getQualityOfLife() - x.getQualityOfLife())) / (this.maxQualityOfLife - this.minQualityOfLife);
 			vector += Math.abs((selected.getExpenses() - x.getExpenses())) / (this.maxExpenses - this.minExpenses);
 			vector += Math.abs((selected.getNumOfApplicants() - x.getNumOfApplicants())) / (this.maxNumOfApplicants - this.minNumOfApplicants);
-			if (!selected.getState().equals(x.getState()))
+			if (!selected.getState().equalsIgnoreCase(x.getState()))
 				vector += 0.0;
-			if (!selected.getLocation().equals(x.getLocation()))
+			if (!selected.getLocation().equalsIgnoreCase(x.getLocation()))
 				vector += 0.0;
-			if (!selected.getControl().equals(x.getControl()))
+			if (!selected.getControl().equalsIgnoreCase(x.getControl()))
 				vector += 0.0;
 			ArrayList<String> emphS = selected.getEmphases();
 			ArrayList<String> emphX = x.getEmphases();
 			if (emphS != null && emphX != null) {
 				for (String s : emphS) {
 					for (String r : emphX) {
-						if (!s.equals(r))
+						if (!s.equalsIgnoreCase(r))
 							vector += 1;
 					}
 				}
 			}
-			if (!(selected.getName().equals(x.getName())))
+			if (!(selected.getName().equalsIgnoreCase(x.getName())))
 				vectors.put(vector, x);
 			// where you now select
 			// can sort vectors and grab the top 5 from there or just find the
