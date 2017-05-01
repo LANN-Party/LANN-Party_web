@@ -7,7 +7,6 @@ http-equiv="content-type">
 <title>searchResults</title>
 </head>
 <body>
-<form action="ui" name="searchResults">
 <br>
 <table style="text-align: left; width: 100px;" border="1"
 cellpadding="2" cellspacing="2">
@@ -186,16 +185,11 @@ if(request.getParameter("emph5")!=null || !request.getParameter("emph5").equals(
  emph5=request.getParameter("emph5");
 }
 
-System.out.println("schoolName"+schoolName);
-System.out.println("STATE:"+state);
-System.out.println("location"+location);
-System.out.println("control"+control);
-System.out.println("numStu"+ numStuH);
-System.out.println("percFemale"+percFemaleH);
+
 
 
 ArrayList<University> results = uc.searchSchool(schoolName, state, location, control, numStuH, numStuL, percFemaleH, percFemaleL, satVerbH, satVerbL, satMathH, satMathL, expensesH, expensesL, percFinacialH, percFinacialL, numberAppsH, numberAppsL, percAdmittedH, percAdmittedL, percEnrolledH, percEnrolledL, acdemScaleH, acdemScaleL, socialscaleH, socialscaleL, qualityLifeH, qualityLifeL, emph1, emph2, emph3, emph4, emph5);
-System.out.println("length"+results.size());
+
 
 
 for(University x:results){
@@ -205,23 +199,20 @@ String name = x.getName();
 <td style="vertical-align: top;">
 					<form method="post" action="saveSchool.jsp" name="saveSchool">
 						<input name="saveSchool" value="SaveSchool" type="submit"> <input
-							name="schoolName" value=<% out.print(name); %> type="hidden">
+							name="schoolName" value="<% out.print(name); %>" type="hidden">
 					</form>
 					<td> <%out.println(name+"                                  ");%></td>
-				</td>
 
-</td>
 <td style="vertical-align: top;">
-					<form method="post" action="ViewSchool.jsp" name="ViewSchool">
-						<input name="ViewSchool" value="ViewSchool" type="submit"> <input
-							name="schoolName" value=<% out.println(name); %> type="hidden">
-					</form>
-				</td>
+<form method="post" action="ViewSchool.jsp" name="view">
+<input name="schoolName" value="<%out.print(name);%>" type = "hidden">
+<input name="view"value="View" type="submit">
+</form>
+</td>
 </tr>
 <%}%>
 </tbody>
 </table>
 <br>
-</form>
 </body>
 </html>
