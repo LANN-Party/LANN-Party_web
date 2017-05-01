@@ -6,11 +6,21 @@
     
 <html>
 <head>
+<style>
+body {
+        background-image: url("http://i.imgur.com/jNM42jj.jpg");
+        backgroup-size:100%,100%;
+}
+</style>
 <meta content="text/html; charset=ISO-8859-1"
 http-equiv="content-type">
 <title>manageUniverisites</title>
 </head>
 <body>
+<br>
+<br>
+<br>
+<br>
 <%
 	String error = request.getParameter("Error");
 	if(error != null && error.equals("0"))
