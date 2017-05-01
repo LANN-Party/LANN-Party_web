@@ -9,6 +9,7 @@
 body {
         background-image: url("http://i.imgur.com/jNM42jj.jpg");
         backgroup-size:100%,100%;
+        background-repeat:no-repeat;
 }
 </style>
 <meta content="text/html; charset=ISO-8859-1"

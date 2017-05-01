@@ -5,10 +5,19 @@
     
 <html>
 <head>
+<style>
+body {
+        background-image: url("http://i.imgur.com/jNM42jj.jpg");
+        backgroup-size:100%,100%;
+        background-repeat:no-repeat;
+}
+</style>
 <meta content="text/html; charset=ISO-8859-1"
 http-equiv="content-type">
 <title>searchResults</title>
 </head>
+<br>
+<br>
 <body>
 <br>
 <table style="text-align: left; width: 100px;" border="1"

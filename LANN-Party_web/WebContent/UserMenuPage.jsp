@@ -62,5 +62,6 @@ http-equiv="content-type">
 		
 </table>
 <br>
+<input name="logout" value="Logout" type="submit">
 </body>
 </html>

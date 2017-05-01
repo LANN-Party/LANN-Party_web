@@ -3,11 +3,23 @@
 
 <html>
 <head>
+<style>
+body {
+        background-image: url("http://i.imgur.com/jNM42jj.jpg");
+        backgroup-size:100%,100%;
+        background-repeat:no-repeat;
+}
+</style>
 <meta content="text/html; charset=ISO-8859-1"
 http-equiv="content-type">
 <title></title>
 </head>
 <body>
+<br>
+<br>
+<br>
+<br>
+<br>
 <h1>Search Menu</h1>
 <br>
 <%
