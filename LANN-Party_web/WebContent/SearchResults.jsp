@@ -299,6 +299,9 @@ ArrayList<University> results = uc.searchSchool(schoolName, state, location, con
 
 for(University x:results){
 String name = x.getName();
+System.out.println();
+
+
 %>
 <tr>
 <td style="vertical-align: top;">
