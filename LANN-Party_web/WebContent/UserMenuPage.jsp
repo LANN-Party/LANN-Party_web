@@ -14,7 +14,12 @@
 color:red;
 }
 
+body {
+        background-image: url("http://i.imgur.com/jNM42jj.jpg");
+        backgroup-size:100%,100%;
+}
 </style>
+
 <meta content="text/html; charset=ISO-8859-1"
 http-equiv="content-type">
 
@@ -22,6 +27,10 @@ http-equiv="content-type">
 
 </head>
 <body style="background-color:rgb(102,102,102)">
+<br>
+<br>
+<br>
+<br>
 
 <%
 	StudentUserInterface ui = new StudentUserInterface();
