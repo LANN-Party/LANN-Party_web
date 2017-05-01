@@ -12,20 +12,22 @@ http-equiv="content-type">
 }
 </style>
 <body>
-Login Form: <br>
-<br>
+ <br>
+ <br>
+ <br>
+ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <%
 	String error = request.getParameter("Error");
 	if(error != null && error.equals("1")){
-		out.print("Login Failed");
+		out.print("Invalid user name of password");
 	}
 	if(error != null && error.equals("2")){
 		out.print("Must be logged on");
 	}
 %>
 <form method ="post" action="login_action.jsp" name="login">
-<br>
-<table style="text-align: left; width: 100px;" border="1"
+<table style="text-align: left; width: 100px; margin: 100px" border="1"
 cellpadding="2" cellspacing="2">
 <tbody>
 <tr>
@@ -38,11 +40,13 @@ cellpadding="2" cellspacing="2">
 </td>
 <td style="vertical-align: top;"><input name="Password" type = "password"></td>
 </tr>
+<tr>
+<td><input name="submit" value="Submit" type="submit"></td>
+<td><input name="reset" value="Reset" type="reset"></td>
+</tr>
 </tbody>
 </table>
-<input name="submit" value="Submit" type="submit">&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; <input name="reset" value="Reset" type="reset"><br>
-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="RegisterUser.jsp" class="highlight">Register User</a> 
 </form>
 </body>
