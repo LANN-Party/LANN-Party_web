@@ -218,8 +218,8 @@ char type, char status){
 		}
 	
 	
-	public void getEmphases(String school){
-		AC.getEmphases(school);
+	public ArrayList<String> getEmphases(String school){
+		return AC.getEmphases(school);
 	}
 	
 	/**

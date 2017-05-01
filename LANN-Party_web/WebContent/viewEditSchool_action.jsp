@@ -22,6 +22,8 @@ double percentEnrolled = Double.parseDouble(request.getParameter("percentEnrolle
 int academScale = Integer.parseInt(request.getParameter("academScale"));
 int qualOfLife = Integer.parseInt(request.getParameter("qualOfLife"));
 int socialScale = Integer.parseInt(request.getParameter("socialScale"));
+String emphasis = request.getParameter("emphasis");
+ai.addEmphasis(name, emphasis);
 
 //EDITS INFO
 int error = ai.editSchool(name, state, location, control, numberOfStudents, percentFemales, satVerbal, satMath, expenses,

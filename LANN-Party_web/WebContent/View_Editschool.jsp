@@ -188,7 +188,12 @@ cellpadding="2" cellspacing="2">
 <input name="cancelChanges" value="Reset"
 type="reset"><br>
 </form>
-<form action="ManageUniversities.jsp" name="ManageUniversities">
+<form style="float:left" action="RemoveEmphases.jsp" name="RemoveEmphases">
+<%String name = u.getName(); %>
+<input name="removeEmphases"value="Remove Emphases"type="submit">
+<input name="sName" value=<%out.print(name);%> type="hidden">
+</form>
+<form style="float:left"action="ManageUniversities.jsp" name="ManageUniversities">
 <input name="cancelChanges" value="Cancel" type="submit">
 </form>
 <br>

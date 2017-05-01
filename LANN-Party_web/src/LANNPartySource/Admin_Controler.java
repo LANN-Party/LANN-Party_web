@@ -284,8 +284,8 @@ char type, char status){
 	 * 
 	 * @param school : name of school to get emphases
 	 */
-	public void getEmphases(String school)
+	public ArrayList<String> getEmphases(String school)
 	{
-		System.out.println("Emphases for " + school + ":" + " " +dc.getEmphases(school).toString());
+		return dc.getEmphases(school);
 	}
 }
