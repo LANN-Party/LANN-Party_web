@@ -1,4 +1,5 @@
 <%@include file = "verifyLogin.jsp" %>
+<%@include file = "VerifyStudent.jsp" %>
 
 <html>
 <head>

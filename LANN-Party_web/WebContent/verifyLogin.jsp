@@ -7,7 +7,5 @@ System.out.println(studentA);
 if(adminA==null|| adminA.getCurrentAdmin().isLogon()==false)
 	if((studentA==null|| studentA.getCurrentStudent().isLoggedOn()==false)){
 	response.sendRedirect("Login.jsp?Error=2"); 
-	return;
 }
-
 %>

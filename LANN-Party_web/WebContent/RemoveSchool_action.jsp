@@ -1,5 +1,6 @@
 <%@ page language="java" import="LANNPartySource.* , java.util.*, dblibrary.project.csci230.*"%>
 <%@include file = "verifyLogin.jsp" %>
+<%@include file = "VerifyAdmin.jsp" %>
 
 <%
 	String schoolToRemove = request.getParameter("schoolName");
@@ -8,7 +9,7 @@
 	
 	if (worked)
 		response.sendRedirect("ManageSavedSchools.jsp?ERROR=0");
-	else
-		response.sendRedirect("ManageSavedSchools.jsp?ERROR=1");
+	else 
+		response.sendRedirect("ManageSavedSchools.jsp?ERROR=1"); 
 %>
 		

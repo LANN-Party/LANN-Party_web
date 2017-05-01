@@ -1,5 +1,6 @@
 <%@ page language="java" import="LANNPartySource.* , java.util.*, dblibrary.project.csci230.*" %>
 <%@include file = "verifyLogin.jsp" %>
+<%@include file = "VerifyAdmin.jsp" %>
 
 <% 
 	AdminUI ai = (AdminUI)session.getAttribute("AI");
@@ -9,4 +10,4 @@
 		response.sendRedirect("ManageUsers.jsp");
 	else
 		response.sendRedirect("ManageUsers.jsp?Error=1");
-%>
+%> 

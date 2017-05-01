@@ -1,6 +1,7 @@
 <%@page language="java" import = "LANNPartySource.* , java.util.*, dblibrary.project.csci230.*" %>
 <%StudentUserInterface ui = (StudentUserInterface)session.getAttribute("SI"); %>
 <%@include file = "verifyLogin.jsp" %>
+<%@include file = "VerifyStudent.jsp" %>
 
 <html>
 <head>
@@ -14,7 +15,7 @@ http-equiv="content-type">
 cellpadding="2" cellspacing="2">
 <tbody>
 <tr>
-<td style="vertical-align: top;">First Name<br>
+<td style="vertical-align: top;">First Name<br> 
 </td>
 <td style="vertical-align: top;"><input name="firstname" value = <%out.print(ui.getCurrentStudent().getFirstName()); %>><br>
 </td>

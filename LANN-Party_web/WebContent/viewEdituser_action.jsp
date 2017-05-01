@@ -1,5 +1,6 @@
 <%@ page language="java" import="LANNPartySource.* , java.util.*, dblibrary.project.csci230.*"%>
 <%@include file = "verifyLogin.jsp" %>
+<%@include file = "VerifyStudent.jsp" %>
 
 <%
 	//GETTING ALL VARIABLES FROM PAGE

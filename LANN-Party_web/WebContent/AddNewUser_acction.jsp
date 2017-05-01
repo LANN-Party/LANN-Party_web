@@ -1,5 +1,6 @@
 <%@ page language="java" import="LANNPartySource.* , java.util.*" %>
 <%@include file = "verifyLogin.jsp" %>
+<%@include file = "VerifyAdmin.jsp" %>
 
 <%
 AdminUI ac = (AdminUI)session.getAttribute("AI");
