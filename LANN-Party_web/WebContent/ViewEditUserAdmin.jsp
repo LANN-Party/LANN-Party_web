@@ -18,8 +18,7 @@ http-equiv="content-type">
 </head>
 <br>
 <br>
-<br>
-<br>
+<h1>Edit User</h1>
 <br>
 <body>
 
@@ -121,7 +120,7 @@ cellpadding="2" cellspacing="2">
 &nbsp;&nbsp;&nbsp; <input name="Reset"
 type="reset">
 </form>
-<form method="post" action="DeleteUser.jsp" name="DeleteUser">
+<form style="float: left"method="post" action="DeleteUser.jsp" name="DeleteUser">
 <%
 String userName = "";
 if(user.equals("s")){
@@ -133,6 +132,9 @@ else{
 	%>
 <input name="Delete" value="Delete" type="submit">
 <input name="Username" value=<%out.print(userName);%> type="hidden">
+</form>
+<form style="float: left" action="ManageUsers.jsp" name="ManageUniversities">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="cancelChanges" value="Cancel" type="submit">
 </form>
 </body>
 </html>

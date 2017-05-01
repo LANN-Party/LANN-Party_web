@@ -17,7 +17,7 @@ http-equiv="content-type">
 </head>
 <br>
 <br>
-<br>
+<h1>Edit School</h1>
 <br>
 <body>
 <%
@@ -185,8 +185,11 @@ cellpadding="2" cellspacing="2">
 <br>
 <input name="applyChanges" value="Apply Changes" type="submit">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; 
-<input name="cancelChanges" value="Cancel Changes"
-type="button"><br>
+<input name="cancelChanges" value="Reset"
+type="reset"><br>
+</form>
+<form action="ManageUniversities.jsp" name="ManageUniversities">
+<input name="cancelChanges" value="Cancel" type="submit">
 </form>
 <br>
 <br>

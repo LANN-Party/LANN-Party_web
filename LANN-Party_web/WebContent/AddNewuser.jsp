@@ -71,8 +71,8 @@ cellpadding="2" cellspacing="2">
 <input name="addUser" value="Add User" type="submit">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; <input name="reset" value="Reset" type="reset"><br>
 </form>
-<form action="ManageUniversities.jsp" name="ManageUniversities">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="cancelChanges" value="Cancel" type="submit">
+<form action="ManageUsers.jsp" name="ManageUsers">
+<input name="cancel" value="Cancel" type="submit">
 </form>
 </body>
 </html>

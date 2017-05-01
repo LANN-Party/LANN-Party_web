@@ -185,7 +185,7 @@ cellpadding="2" cellspacing="2">
 <input name="reset" value="Reset" type="reset">
 </form>
 <form action="ManageUniversities.jsp" name="ManageUniversities">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="cancelChanges" value="Cancel" type="submit">
+<input name="cancelChanges" value="Cancel" type="submit">
 </form>
 <br>
 <br>
