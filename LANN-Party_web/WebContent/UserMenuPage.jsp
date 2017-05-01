@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" import="LANNPartySource.* , java.util.*" 
     pageEncoding="UTF-8"%>
     <%@include file = "verifyLogin.jsp" %>
+    <%@include file = "VerifyStudent.jsp" %>>
     <% String error = request.getParameter("Error");
 	if(error != null && error.equals("1")){
 		out.print("You can only access Student pages");
@@ -35,6 +36,7 @@ http-equiv="content-type">
 <%
 	StudentUserInterface ui = new StudentUserInterface();
 	session.setAttribute("UI",ui); 
+	ExtraInfoExtractor eie = (ExtraInfoExtractor)session.getAttribute("EIE");
 	String change = request.getParameter("CHANGE");
 
 	if (change!=null && change.equals("1"))
