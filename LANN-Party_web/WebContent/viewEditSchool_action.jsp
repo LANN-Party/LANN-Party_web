@@ -4,12 +4,14 @@
 <% 
 
 AdminUI ai = (AdminUI)session.getAttribute("AI");
+ExtraInfoExtractor eie = (ExtraInfoExtractor)session.getAttribute("EIE");
 
 //GETTING ALL VARIABLES FROM PAGE
 String name = request.getParameter("schoolName");
 String state = request.getParameter("state");
 String location = request.getParameter("location");
 String control = request.getParameter("control");
+String link = request.getParameter("schoolLink");
 int numberOfStudents = Integer.parseInt(request.getParameter("numberOfStudents"));
 double percentFemales = Double.parseDouble(request.getParameter("percentFemale"));
 double satVerbal = Double.parseDouble(request.getParameter("satVerbal"));
@@ -76,6 +78,7 @@ else if(error==13){
 else if(error==14){
 	response.sendRedirect("View_Editschool.jsp?Error=14&SchoolName="+name);
 }
+eie.editLink(name, link);
 
 
 %>

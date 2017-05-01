@@ -9,6 +9,7 @@ http-equiv="content-type">
 	body {
         background-image: url("http://i.imgur.com/rZwQFmY.jpg");
         backgroup-size:100%,100%;
+        background-repeat:no-repeat;
 }
 </style>
 <body>

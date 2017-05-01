@@ -85,8 +85,9 @@ public class ExtraInfoExtractor {
 	public void addUniversity(String schoolName, String link){
 		try{
 			bw = new BufferedWriter(new FileWriter("/net/home/lrdahlquist/git/LANN-Party_web/LANN-Party_web/SchoolInfo/SchoolInfo.txt", true));
-			String line = schoolName+link+0;
+			String line = schoolName+","+link+","+0;
 			bw.write(line);
+			bw.write(System.lineSeparator());
 			bw.flush();
 			bw.close();
 		}

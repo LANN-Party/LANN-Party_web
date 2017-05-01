@@ -178,6 +178,12 @@ cellpadding="2" cellspacing="2">
 <td style="vertical-align: top;"><input name="emphasis">
 </td>
 </tr>
+<tr>
+<td style="vertical-align: top;">Link (Optional)<br>
+</td>
+<td style="vertical-align: top;"><input name="schoolLink">
+</td>
+</tr>
 </tbody>
 </table>
 <br>

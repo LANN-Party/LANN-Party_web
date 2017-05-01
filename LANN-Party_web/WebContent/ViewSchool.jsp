@@ -43,6 +43,17 @@ cellpadding="2" cellspacing="2">
 <td style="vertical-align: top;"><%out.println(school.getName());%><br>
 </td>
 </tr>
+<%if (!eie.getLink(school.getName()).equals("")){
+	%>
+	<tr>
+	<td style="vertical-align: top;">Link to Their Website</td>
+	<td>
+	<a href="<%out.print(eie.getLink(school.getName()));%>" target="_blank"> <%out.print(school.getName());%> </a>
+	</td>
+	</tr>
+	<%
+}
+	%>
 <tr>
 <td style="vertical-align: top;">State<br>
 </td>

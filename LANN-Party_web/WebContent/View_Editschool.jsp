@@ -72,6 +72,7 @@ else if(error != null && error.equals("14")){
 	String schoolName = request.getParameter("SchoolName");
 	AdminUI ai = (AdminUI)session.getAttribute("AI");
 	University u = ai.getSchool(schoolName);
+	ExtraInfoExtractor eie = (ExtraInfoExtractor)session.getAttribute("EIE");
 %>
 <form action="viewEditSchool_action.jsp" name="viewOrEditSchool">
 <table style="text-align: left; width: 100px;" border="1"
@@ -177,6 +178,12 @@ cellpadding="2" cellspacing="2">
 <td style="vertical-align: top;">Emphases<br>
 </td>
 <td style="vertical-align: top;"><input name="emphasis" value=<%out.print(u.getEmphases());%>>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">University Link (Optional)<br>
+</td>
+<td style="vertical-align: top;"><input name="schoolLink" value=<%eie.getLink(u.getName());%>>
 </td>
 </tr>
 </tbody>

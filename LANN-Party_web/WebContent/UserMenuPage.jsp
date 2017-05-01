@@ -17,6 +17,7 @@ color:red;
 body {
         background-image: url("http://i.imgur.com/jNM42jj.jpg");
         backgroup-size:100%,100%;
+        background-repeat:no-repeat;
 }
 </style>
 
@@ -26,7 +27,6 @@ http-equiv="content-type">
 <title>userMenuPage</title>
 
 </head>
-<body style="background-color:rgb(102,102,102)">
 <br>
 <br>
 <br>
