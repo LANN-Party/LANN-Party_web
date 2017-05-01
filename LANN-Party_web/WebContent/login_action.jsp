@@ -23,5 +23,8 @@
 	else if(logStatus == 0){
 		response.sendRedirect("Login.jsp?Error=1");
 	}
+	else if(logStatus ==3){
+		response.sendRedirect("Login.jsp?Error=3");
+	}
 	
 %>

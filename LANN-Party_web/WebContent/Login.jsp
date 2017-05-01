@@ -26,6 +26,9 @@ http-equiv="content-type">
 	if(error != null && error.equals("2")){
 		out.print("Must be logged on");
 	}
+	if(error != null && error.equals("3")){
+		out.print("User is not active");
+	}
 %>
 <form method ="post" action="login_action.jsp" name="login">
 <table style="text-align: left; width: 100px; margin: 100px" border="1"

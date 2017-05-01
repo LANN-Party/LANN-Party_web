@@ -33,7 +33,7 @@ public class login_cont {
 			Student s = dc.getUser(username);
 			Admin a = dc.getAdmin(username);
 			if(s != null){
-				if(password.equals(s.getPassword())){
+				if(password.equals(s.getPassword()) && s.getStatus()=='Y'){
 					if(!s.isLoggedOn()){
 						s.setLogon(true);
 						currentStudent = s;
@@ -54,13 +54,13 @@ public class login_cont {
 						}
 					}
 				}
-				else{
+				else if(s.getStatus()=='N'){
 					loginFail();
-					return 0;
+					return 3;
 				}
 			}
 			else if(a != null){
-				if(password.equals(a.getPassword())){
+				if(password.equals(a.getPassword()) && a.getStatus()=='Y'){
 					if(!a.isLogon()){
 						a.setLogon(true);
 						//System.out.println("Logged on");
@@ -82,9 +82,9 @@ public class login_cont {
 						}
 					}
 				}
-				else{
+				else if(a.getStatus()=='N'){
 					loginFail();
-					return 0;
+					return 3;
 				}
 			}
 		else
